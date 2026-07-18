@@ -70,6 +70,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // one-line blurb (e.g. the boat sub-categories) is otherwise an <h1> + CTA at
   // HTTP 200 — which Google classifies as "Soft 404". Index iff the page has at
   // least one browseable/substantive section:
+  //   - a taxonomy root (parent_id === null) — the sitemap submits every active
+  //     root unconditionally, so the page MUST index roots unconditionally too,
+  //     else a root whose sub-categories were all deactivated would be noindex
+  //     here yet still in the sitemap ("Submitted URL marked noindex"). Roots
+  //     also always carry the sub-category grid, so they are never truly thin.
   //   - active sub-categories (a browseable hub),
   //   - ≥1 provider the page actually LISTS (searchProfessionals → is_verified;
   //     the render signal — never noindex a page that shows providers),
@@ -91,6 +96,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     0,
   );
   const isIndexable =
+    category.parent_id === null ||
     subCats.length > 0 ||
     hasListedProvider ||
     hasApprovedProvider ||
