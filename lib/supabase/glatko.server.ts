@@ -1689,6 +1689,73 @@ export async function getApprovedProviderCategoryIds(): Promise<Set<string>> {
 }
 
 /**
+ * Set of service-category ids that have at least one provider the public
+ * directory actually LISTS — i.e. `is_verified` in the PII-free view, the exact
+ * signal searchProfessionals renders with. Complements
+ * getApprovedProviderCategoryIds (which keys off verification_status='approved'):
+ * the two columns can diverge on live data, so the sitemap unions both to cover
+ * every category whose page shows providers. Two-step (view has no FK metadata
+ * for a pro_services embed); pro volume is small so the `.in(...)` stays cheap.
+ */
+export async function getListedProviderCategoryIds(): Promise<Set<string>> {
+  const supabase = createClient();
+  const ids = new Set<string>();
+  const { data: pros, error } = await supabase
+    .from("glatko_public_professionals")
+    .select("id")
+    .eq("is_verified", true);
+  if (error || !pros) return ids;
+  const proIds = pros.map((p) => p.id as string);
+  if (proIds.length === 0) return ids;
+  const { data: svc } = await supabase
+    .from("glatko_pro_services")
+    .select("category_id")
+    .in("professional_id", proIds);
+  for (const s of (svc ?? []) as Array<{ category_id: string | null }>) {
+    if (s.category_id) ids.add(s.category_id);
+  }
+  return ids;
+}
+
+/**
+ * Minimum localized-description length (in any single locale) at which a
+ * category's editorial copy alone justifies indexing an otherwise-empty page.
+ *
+ * Shared single source of truth for BOTH the category page's `robots` decision
+ * (app/[locale]/services/[slug]) and the sitemap's editorial gate (app/sitemap).
+ * The old sitemap bar was 100 chars — low enough that a one-line seeded blurb
+ * (e.g. the boat sub-category descriptions) qualified, so a provider-less,
+ * child-less leaf still shipped `index,follow` at HTTP 200 → Google flagged it
+ * "Soft 404". A real editorial description (buying guide, service explainer) is
+ * several sentences; 300 chars keeps those in while dropping the thin blurbs.
+ */
+export const CATEGORY_EDITORIAL_MIN_CHARS = 300;
+
+/**
+ * True iff the category — or, for a root, any of its active sub-categories — has
+ * at least one approved + active provider. This mirrors getApprovedProviderCategoryIds
+ * (the sitemap's inclusion signal) for a SINGLE category, so the category page's
+ * `robots.index` decision can never contradict the sitemap: any category the
+ * sitemap submits via its approved-provider path also reports indexable here.
+ * `.limit(1)` keeps it a cheap existence check.
+ */
+export async function categoryTreeHasApprovedProvider(
+  categoryId: string,
+): Promise<boolean> {
+  const supabase = createClient();
+  const categoryIds = await expandRootCategoryIds(supabase, categoryId);
+  const { data, error } = await supabase
+    .from("glatko_professional_profiles")
+    .select("id, glatko_pro_services!inner(category_id)")
+    .eq("is_active", true)
+    .eq("verification_status", "approved")
+    .in("glatko_pro_services.category_id", categoryIds)
+    .limit(1);
+  if (error) return false;
+  return (data?.length ?? 0) > 0;
+}
+
+/**
  * Distinct `location_city` values for active+verified pros that offer the
  * given category, used as the dynamic part of `Service.areaServed` /
  * `LocalBusiness.areaServed`. Returns [] when no verified pro is yet

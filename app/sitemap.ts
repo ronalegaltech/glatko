@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
 
 import {
+  CATEGORY_EDITORIAL_MIN_CHARS,
   getAllActiveCategories,
   getApprovedProviderCategoryIds,
+  getListedProviderCategoryIds,
   getProfessionalsForSitemap,
 } from "@/lib/supabase/glatko.server";
 import { getAllPostSlugsWithTranslations } from "@/lib/sanity/fetch";
@@ -110,6 +112,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     professionals,
     blogPostsByLocale,
     approvedCatIds,
+    listedCatIds,
     liquidCombos,
   ] = await Promise.all([
     getAllActiveCategories(),
@@ -120,10 +123,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       LOCALES.map((l) => getAllPostSlugsWithTranslations(l).catch(() => [])),
     ),
     getApprovedProviderCategoryIds(),
+    getListedProviderCategoryIds(),
     // G-PSEO-FOUNDATION FAZ2: liquid service × city combinations (only those
     // passing the liquidity gate are publishable). One bulk RPC call.
     getLiquidCombinations(),
   ]);
+  // Union of both provider signals: a category enters the sitemap if it has a
+  // provider that is EITHER approved (verification_status) OR listed
+  // (is_verified — what the page actually renders). The two columns can diverge,
+  // so unioning keeps every provider-showing page covered and guarantees the
+  // sitemap never contradicts the category page's robots (which indexes on the
+  // same union).
+  const providerCatIds = new Set<string>();
+  approvedCatIds.forEach((id) => providerCatIds.add(id));
+  listedCatIds.forEach((id) => providerCatIds.add(id));
   const buildTime = new Date();
   const routes: MetadataRoute.Sitemap = [];
 
@@ -139,14 +152,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  // G-SEO-FIX-1 / A1 (Phase 1 — sitemap-exclude only, NO noindex):
+  // G-SEO-FIX-1 / A1 + SEO-SOFT404-FIX:
   // A category enters the sitemap iff it is a root (taxonomy backbone, always
-  // indexed), OR has >=1 approved+active provider, OR carries real editorial
-  // content (any localized description > 100 chars). Empty leaf sub-categories
-  // are dropped so Google's crawl priority follows content quality — the pages
-  // stay live and reachable via internal links (noindex deferred to Phase 2).
+  // indexed), OR has >=1 provider that shows (approved OR listed/is_verified),
+  // OR carries real editorial content (any localized description
+  // >= CATEGORY_EDITORIAL_MIN_CHARS). Empty leaf sub-categories are dropped so
+  // Google's crawl priority follows content quality — the pages stay live and
+  // reachable via internal links, and are noindex'd by the page itself.
+  // The editorial gate shares CATEGORY_EDITORIAL_MIN_CHARS with the category
+  // page's robots decision so a page is never noindex'd yet still submitted here
+  // ("Soft 404" / "Submitted URL marked noindex"). The old 100-char bar let a
+  // single seeded one-liner qualify an otherwise-empty leaf.
   const hasEditorial = (d: Record<string, string> | null): boolean =>
-    !!d && Object.values(d).some((v) => typeof v === "string" && v.length > 100);
+    !!d &&
+    Object.values(d).some(
+      (v) => typeof v === "string" && v.length >= CATEGORY_EDITORIAL_MIN_CHARS,
+    );
   const childIdsByParent = new Map<string, string[]>();
   for (const c of categories) {
     if (c.parent_id) {
@@ -157,9 +178,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
   const isIndexable = (c: (typeof categories)[number]): boolean => {
     if (c.parent_id === null) return true; // root: taxonomy backbone
-    if (approvedCatIds.has(c.id)) return true; // own approved+active provider
+    if (providerCatIds.has(c.id)) return true; // own provider (approved|listed)
     // rollup safety net for any future 3rd taxonomy level (leaves: no-op)
-    if ((childIdsByParent.get(c.id) ?? []).some((id) => approvedCatIds.has(id)))
+    if ((childIdsByParent.get(c.id) ?? []).some((id) => providerCatIds.has(id)))
       return true;
     return hasEditorial(c.description); // real editorial content
   };

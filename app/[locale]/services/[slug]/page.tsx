@@ -10,6 +10,8 @@ import { PageBackground } from "@/components/ui/PageBackground";
 import { Breadcrumb, type BreadcrumbCrumb } from "@/components/seo/Breadcrumb";
 import { FoundingProviderBadge } from "@/components/glatko/founding/FoundingProviderBadge";
 import {
+  CATEGORY_EDITORIAL_MIN_CHARS,
+  categoryTreeHasApprovedProvider,
   getCategoryBySlug,
   getCitiesServingCategory,
   getSubCategories,
@@ -63,6 +65,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const alternates = buildAlternates(locale, "/services/[slug]", { slug });
 
+  // SEO-SOFT404-FIX: a category page must only be indexable when it will render
+  // real content. A provider-less, child-less, FAQ-less leaf with just a
+  // one-line blurb (e.g. the boat sub-categories) is otherwise an <h1> + CTA at
+  // HTTP 200 — which Google classifies as "Soft 404". Index iff the page has at
+  // least one browseable/substantive section:
+  //   - active sub-categories (a browseable hub),
+  //   - ≥1 provider the page actually LISTS (searchProfessionals → is_verified;
+  //     the render signal — never noindex a page that shows providers),
+  //   - ≥1 approved provider (the SITEMAP's inclusion signal; kept so a page is
+  //     never noindex'd while still submitted — is_verified and approved can
+  //     diverge on live data),
+  //   - seeded FAQs, or a genuine editorial description.
+  // Otherwise noindex,follow — kept live + link-equity flowing; auto-flips to
+  // index the moment real content lands.
+  const [subCats, providerListing, hasApprovedProvider] = await Promise.all([
+    getSubCategories(category.id),
+    searchProfessionals({ locale, categorySlug: slug, limit: 1 }),
+    categoryTreeHasApprovedProvider(category.id),
+  ]);
+  const hasListedProvider = (providerListing.total ?? 0) > 0;
+  const hasFaqs = (category.faqs ?? []).length > 0;
+  const maxDescLen = Object.values(category.description ?? {}).reduce(
+    (max, v) => (typeof v === "string" && v.length > max ? v.length : max),
+    0,
+  );
+  const isIndexable =
+    subCats.length > 0 ||
+    hasListedProvider ||
+    hasApprovedProvider ||
+    hasFaqs ||
+    maxDescLen >= CATEGORY_EDITORIAL_MIN_CHARS;
+
   return {
     title: name,
     description,
@@ -80,7 +114,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${name} — Glatko`,
       description,
     },
-    robots: { index: true, follow: true },
+    robots: { index: isIndexable, follow: true },
   };
 }
 
