@@ -136,40 +136,40 @@
   },
   "howItWorks": {
     "title": "How It Works",
-    "subtitle": "Professional service in 3 easy steps",
+    "subtitle": "Professional service in three steps",
     "step1": {
       "title": "Request a Service",
       "description": "Describe what you need in detail and attach photos"
     },
     "step2": {
       "title": "Compare Quotes",
-      "description": "Receive quotes from verified professionals"
+      "description": "Verified professionals matched to your job are notified"
     },
     "step3": {
       "title": "Complete & Review",
-      "description": "Choose your professional, get the job done, share your experience"
+      "description": "Compare the quotes that come back and choose"
     },
     "hero": {
       "eyebrow": "How Glatko works",
-      "title": "Three steps from request to job done",
-      "subtitle": "Tell us what you need, get bids from verified Boka Bay professionals, pick the one you trust."
+      "title": "Three steps, and a person in the middle",
+      "subtitle": "Describe what you need, we review it and notify verified professionals across Montenegro, and you compare the quotes that come back."
     },
     "steps": {
       "s1": {
         "title": "Tell us what you need",
-        "desc": "Pick a category, answer a few short questions, attach photos if helpful. Takes about 2 minutes."
+        "desc": "Pick a category, answer a few short questions, add photos if they help. It is free, and you do not need an account."
       },
       "s2": {
-        "title": "Compare bids and chat",
-        "desc": "Within hours, you receive bids from verified pros. Message them, ask questions, see ratings."
+        "title": "A person reviews it",
+        "desc": "Every request is read before it goes out. Then it reaches the verified professionals matched to your job, rather than a list of everyone."
       },
       "s3": {
-        "title": "Pick a pro and get it done",
-        "desc": "Accept the bid that fits. After the job's complete, leave a review — that's how we keep the bar high."
+        "title": "Compare quotes and choose",
+        "desc": "Quotes reach you by email and on WhatsApp, in your language. Compare them, ask questions, and pick the professional that fits."
       }
     },
     "foundingCallout": {
-      "title": "First 100 customers get a Founding badge + 5 free credits",
+      "title": "First 100 customers get a Founding Customer badge",
       "body": "We're in our soft-launch phase. Be one of the first 100 to submit a request and we'll add your Founding Customer perks automatically.",
       "cta": "See the perks"
     },
@@ -198,7 +198,7 @@
   },
   "cta": {
     "title": "Ready to Get Started?",
-    "subtitle": "Take the first step — get a free quote in 60 seconds",
+    "subtitle": "Take the first step — describing your job is free",
     "button": "Request a Service",
     "pro": {
       "title": "Are You a Professional?",
@@ -400,7 +400,7 @@
       "mission": "Our mission is to make finding reliable service providers in Montenegro effortless, transparent, and secure.",
       "location": "Based in Budva, we are active across Budva, Kotor, and Tivat — with plans to expand throughout Montenegro.",
       "services": "From villa cleaning and renovation to boat maintenance and captain hire, Glatko covers a wide range of professional services.",
-      "howItWorks": "Our platform uses a transparent bidding system: you describe what you need, verified professionals submit quotes, and you choose the best fit.",
+      "howItWorks": "Our platform uses a transparent quote system: you describe what you need, we review the request and notify matched verified professionals, and you choose from the quotes that come back.",
       "languages": "Glatko is available in 9 languages: Turkish, English, Russian, German, Italian, Ukrainian, Serbian, Montenegrin, and Arabic.",
       "operator": "Glatko is operated by RONA LEGAL DOO, a company registered in Montenegro (PIB 04390768).",
       "contactEmail": "contact@glatko.app",
@@ -1812,7 +1812,7 @@
       "step1Desc": "Describe what kind of service you need",
       "step2Title": "Get Quotes",
       "step2Desc": "Receive quotes from verified professionals",
-      "step3Title": "Choose a Pro",
+      "step3Title": "Choose a professional",
       "step3Desc": "Compare quotes and pick the best fit",
       "step4Title": "Job Done",
       "step4Desc": "The professional completes the work, you rate them"
@@ -1863,7 +1863,7 @@
       "q5": "How does Glatko work?",
       "a5": "Glatko works in three simple steps. First, you describe what you need in a short request. Second, verified professionals in your area send you their offers. Third, you compare the offers and choose the professional you want to work with.",
       "q6": "When will I receive my first offer?",
-      "a6": "Professionals are notified as soon as your request goes live, so offers can start arriving within hours. The exact timing depends on the category and how many professionals are active in your city, as busier services and locations usually get faster responses.",
+      "a6": "Your request is read by a person before it goes out. Once it is approved, the professionals matched to your job are notified straight away. We do not promise a turnaround time: how quickly offers come back depends on the category and on how many professionals are active in your city.",
       "q7": "Which cities in Montenegro does Glatko cover?",
       "a7": "Glatko operates across Montenegro, including Podgorica, Budva, Kotor, Bar, Tivat, Herceg Novi and Nikšić. Coverage keeps expanding to wherever there is real demand and available professionals, rather than being limited to a single region or stretch of coast.",
       "q8": "Is Glatko different for locals and for expats or visitors?",
@@ -2430,11 +2430,11 @@
       "howItWorks": {
         "headline": "How it works",
         "step1Title": "Describe your job",
-        "step1Body": "Tell us what you need and where — it's free and takes a minute.",
-        "step2Title": "Compare quotes",
-        "step2Body": "Verified professionals send you quotes with prices and timelines.",
-        "step3Title": "Choose and start",
-        "step3Body": "Check ratings and reviews, then pick the professional that fits."
+        "step1Body": "Tell us what you need and where. It is free, and you do not need an account.",
+        "step2Title": "We review and match",
+        "step2Body": "A person reads your request, then verified professionals matched to the job are notified.",
+        "step3Title": "Compare and choose",
+        "step3Body": "Compare the quotes that come back and pick the professional that fits."
       },
       "costGuide": {
         "headline": "Cost guide",

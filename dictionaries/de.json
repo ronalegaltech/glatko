@@ -143,33 +143,33 @@
     },
     "step2": {
       "title": "Angebote vergleichen",
-      "description": "Erhalten Sie Angebote von geprüften Fachleuten"
+      "description": "Geprüfte Fachleute, die zu Ihrem Auftrag passen, werden benachrichtigt"
     },
     "step3": {
       "title": "Abschließen & Bewerten",
-      "description": "Wählen Sie Ihre Fachkraft, lassen Sie die Arbeit erledigen, teilen Sie Ihre Erfahrung"
+      "description": "Vergleichen Sie die eingehenden Angebote und wählen Sie"
     },
     "hero": {
       "eyebrow": "So funktioniert Glatko",
-      "title": "Drei Schritte von der Anfrage zum erledigten Auftrag",
-      "subtitle": "Sagen Sie uns, was Sie brauchen. Erhalten Sie Angebote von verifizierten Profis aus der Bucht — wählen Sie den, dem Sie vertrauen."
+      "title": "Drei Schritte, und in der Mitte ein Mensch",
+      "subtitle": "Beschreiben Sie, was Sie brauchen. Wir prüfen die Anfrage und benachrichtigen geprüfte Fachleute in ganz Montenegro, und Sie vergleichen die eingehenden Angebote."
     },
     "steps": {
       "s1": {
         "title": "Anfrage stellen",
-        "desc": "Kategorie wählen, kurze Fragen beantworten, optional Fotos hinzufügen. Etwa 2 Minuten."
+        "desc": "Kategorie wählen, kurze Fragen beantworten, Fotos hinzufügen, wenn sie helfen. Kostenlos, und Sie brauchen kein Konto."
       },
       "s2": {
-        "title": "Angebote vergleichen, chatten",
-        "desc": "Innerhalb weniger Stunden erhalten Sie Angebote verifizierter Profis. Schreiben Sie, fragen Sie, sehen Sie Bewertungen."
+        "title": "Ein Mensch prüft sie",
+        "desc": "Jede Anfrage wird gelesen, bevor sie hinausgeht. Danach erreicht sie die geprüften Fachleute, die zu Ihrem Auftrag passen — nicht eine Liste aller."
       },
       "s3": {
-        "title": "Profi wählen, Auftrag erledigt",
-        "desc": "Akzeptieren Sie das passende Angebot. Nach Abschluss eine Bewertung — so halten wir die Qualität hoch."
+        "title": "Angebote vergleichen und wählen",
+        "desc": "Angebote erreichen Sie per E-Mail und über WhatsApp, in Ihrer Sprache. Vergleichen Sie, stellen Sie Fragen, und wählen Sie die passende Fachkraft."
       }
     },
     "foundingCallout": {
-      "title": "Erste 100 Kunden erhalten Founding-Abzeichen + 5 Gratis-Credits",
+      "title": "Erste 100 Kunden erhalten ein Founding-Customer-Abzeichen",
       "body": "Wir sind im Soft-Launch. Senden Sie als eine(r) der ersten 100 eine Anfrage — die Founding-Vorteile gibt's automatisch.",
       "cta": "Vorteile ansehen"
     },
@@ -198,7 +198,7 @@
   },
   "cta": {
     "title": "Bereit loszulegen?",
-    "subtitle": "Machen Sie den ersten Schritt — kostenloses Angebot in 60 Sekunden",
+    "subtitle": "Machen Sie den ersten Schritt — Ihren Auftrag zu beschreiben ist kostenlos",
     "button": "Service anfragen",
     "pro": {
       "title": "Sind Sie Fachkraft?",
@@ -400,7 +400,7 @@
       "mission": "Our mission is to make finding reliable service providers in Montenegro effortless, transparent, and secure.",
       "location": "Based in Budva, we are active across Budva, Kotor, and Tivat — with plans to expand throughout Montenegro.",
       "services": "From villa cleaning and renovation to boat maintenance and captain hire, Glatko covers a wide range of professional services.",
-      "howItWorks": "Our platform uses a transparent bidding system: you describe what you need, verified professionals submit quotes, and you choose the best fit.",
+      "howItWorks": "Our platform uses a transparent quote system: you describe what you need, we review the request and notify matched verified professionals, and you choose from the quotes that come back.",
       "languages": "Glatko is available in 9 languages: Turkish, English, Russian, German, Italian, Ukrainian, Serbian, Montenegrin, and Arabic.",
       "operator": "Glatko wird von RONA LEGAL DOO betrieben, einem in Montenegro registrierten Unternehmen (PIB 04390768).",
       "contactEmail": "contact@glatko.app",
@@ -1812,10 +1812,10 @@
       "step1Desc": "Beschreiben Sie, welche Art von Service Sie benötigen",
       "step2Title": "Angebote erhalten",
       "step2Desc": "Erhalten Sie Angebote von verifizierten Fachleuten",
-      "step3Title": "Profi wählen",
+      "step3Title": "Fachkraft wählen",
       "step3Desc": "Vergleichen Sie Angebote und wählen Sie das Beste",
       "step4Title": "Auftrag erledigt",
-      "step4Desc": "Der Profi erledigt die Arbeit, Sie bewerten ihn"
+      "step4Desc": "Die Fachkraft erledigt die Arbeit, Sie bewerten sie"
     },
     "deepFeatures": {
       "title": "Warum Glatko?",
@@ -2430,11 +2430,11 @@
       "howItWorks": {
         "headline": "So funktioniert es",
         "step1Title": "Beschreiben Sie Ihr Projekt",
-        "step1Body": "Sagen Sie uns, was Sie wo brauchen — kostenlos und in einer Minute.",
-        "step2Title": "Angebote vergleichen",
-        "step2Body": "Geprüfte Fachleute senden Ihnen Angebote mit Preisen und Terminen.",
-        "step3Title": "Auswählen und starten",
-        "step3Body": "Bewertungen und Rezensionen prüfen und die passende Fachkraft wählen."
+        "step1Body": "Sagen Sie uns, was Sie wo brauchen. Kostenlos, und Sie brauchen kein Konto.",
+        "step2Title": "Wir prüfen und vermitteln",
+        "step2Body": "Ein Mensch liest Ihre Anfrage, danach werden passende geprüfte Fachleute benachrichtigt.",
+        "step3Title": "Vergleichen und wählen",
+        "step3Body": "Vergleichen Sie die eingehenden Angebote und wählen Sie die passende Fachkraft."
       },
       "costGuide": {
         "headline": "Preisübersicht",
