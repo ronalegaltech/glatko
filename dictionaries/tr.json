@@ -143,33 +143,33 @@
     },
     "step2": {
       "title": "Teklifleri Karşılaştır",
-      "description": "Doğrulanmış profesyonellerden fiyat teklifi alın"
+      "description": "İşinize uygun doğrulanmış profesyoneller bilgilendirilir"
     },
     "step3": {
       "title": "İşi Tamamla & Değerlendir",
-      "description": "Profesyoneli seçin, işi yaptırın, deneyiminizi paylaşın"
+      "description": "Gelen teklifleri karşılaştırın ve seçin"
     },
     "hero": {
       "eyebrow": "Glatko nasıl çalışır",
-      "title": "Talepten iş tamam'a üç adım",
-      "subtitle": "Ne istediğini söyle, doğrulanmış Boka Bay pro'larından teklif al, güvendiğini seç."
+      "title": "Üç adım ve ortada bir insan",
+      "subtitle": "Ne istediğinizi yazın; talebinizi inceleyip Karadağ genelindeki doğrulanmış profesyonelleri bilgilendirelim, siz de gelen teklifleri karşılaştırın."
     },
     "steps": {
       "s1": {
         "title": "Ne istediğini söyle",
-        "desc": "Kategori seç, kısa sorulara yanıt ver, gerekiyorsa fotoğraf ekle. Yaklaşık 2 dakika."
+        "desc": "Kategori seçin, kısa sorulara yanıt verin, işe yarıyorsa fotoğraf ekleyin. Ücretsiz ve hesap açmanız gerekmiyor."
       },
       "s2": {
-        "title": "Teklifleri karşılaştır, sohbet et",
-        "desc": "Saatler içinde doğrulanmış pro'lardan teklifler alırsın. Mesaj at, sor, puanları gör."
+        "title": "Bir kişi inceler",
+        "desc": "Her talep dışarı çıkmadan önce okunur. Sonra herkese değil, işinize uygun doğrulanmış profesyonellere gider."
       },
       "s3": {
-        "title": "Pro seç ve işi tamamla",
-        "desc": "Sana uyan teklifi onayla. İş bitince yorum bırak — kalite çıtasını böyle yüksek tutuyoruz."
+        "title": "Teklifleri karşılaştırın ve seçin",
+        "desc": "Teklifler e-posta ve WhatsApp üzerinden, kendi dilinizde ulaşır. Karşılaştırın, soru sorun, size uyan profesyoneli seçin."
       }
     },
     "foundingCallout": {
-      "title": "İlk 100 müşteri Kurucu rozeti + 5 ücretsiz kredi alıyor",
+      "title": "İlk 100 müşteri Kurucu Müşteri rozeti alıyor",
       "body": "Soft-launch aşamasındayız. Talep gönderen ilk 100 müşteriye Kurucu Müşteri ayrıcalıklarını otomatik tanıyoruz.",
       "cta": "Ayrıcalıkları gör"
     },
@@ -198,7 +198,7 @@
   },
   "cta": {
     "title": "Hizmet Almaya Başlayın",
-    "subtitle": "İlk adımı atın — 60 saniyede ücretsiz teklif alın",
+    "subtitle": "İlk adımı atın — işinizi anlatmak ücretsiz",
     "button": "Hizmet Talep Et",
     "pro": {
       "title": "Profesyonel misiniz?",
@@ -400,7 +400,7 @@
       "mission": "Misyonumuz, Karadağ'da güvenilir hizmet sağlayıcılar bulmayı zahmetsiz, şeffaf ve güvenli hale getirmektir.",
       "location": "Budva merkezli olarak Budva, Kotor ve Tivat'ta aktif hizmet veriyoruz — tüm Karadağ'a genişleme planlarımız var.",
       "services": "Villa temizliği ve tadilatdan tekne bakımı ve kaptan kiralamaya kadar geniş yelpazede profesyonel hizmetleri kapsar.",
-      "howItWorks": "Platformumuz şeffaf teklif sistemiyle çalışır: ihtiyacınızı tanımlarsınız, doğrulanmış profesyoneller teklif verir, siz en uygununu seçersiniz.",
+      "howItWorks": "Platformumuz şeffaf teklif sistemiyle çalışır: ihtiyacınızı tanımlarsınız, talebi inceleyip işe uygun doğrulanmış profesyonelleri bilgilendiririz, siz de gelen teklifler arasından seçersiniz.",
       "languages": "Glatko 9 dilde kullanılabilir: Türkçe, İngilizce, Rusça, Almanca, İtalyanca, Ukraynaca, Sırpça, Karadağca ve Arapça.",
       "operator": "Glatko, Karadağ'da kayıtlı RONA LEGAL DOO tarafından işletilmektedir (PIB 04390768).",
       "contactEmail": "contact@glatko.app",
@@ -2430,11 +2430,11 @@
       "howItWorks": {
         "headline": "Nasıl çalışır",
         "step1Title": "İşinizi anlatın",
-        "step1Body": "Neye, nerede ihtiyacınız olduğunu söyleyin — ücretsiz ve bir dakika sürer.",
-        "step2Title": "Teklifleri karşılaştırın",
-        "step2Body": "Doğrulanmış profesyoneller size fiyat ve süre içeren teklifler gönderir.",
-        "step3Title": "Seçin ve başlayın",
-        "step3Body": "Puanları ve yorumları inceleyin, size uygun profesyoneli seçin."
+        "step1Body": "Neye, nerede ihtiyacınız olduğunu söyleyin. Ücretsiz ve hesap açmanız gerekmiyor.",
+        "step2Title": "İnceler ve eşleştiririz",
+        "step2Body": "Talebinizi bir kişi okur, ardından işe uygun doğrulanmış profesyoneller bilgilendirilir.",
+        "step3Title": "Karşılaştırın ve seçin",
+        "step3Body": "Gelen teklifleri karşılaştırın ve size uygun profesyoneli seçin."
       },
       "costGuide": {
         "headline": "Fiyat rehberi",

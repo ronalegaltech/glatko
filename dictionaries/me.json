@@ -143,33 +143,33 @@
     },
     "step2": {
       "title": "Uporedite ponude",
-      "description": "Dobijte ponude od provjerenih profesionalaca"
+      "description": "Provjereni profesionalci koji odgovaraju vašem poslu budu obaviješteni"
     },
     "step3": {
       "title": "Završite i ocijenite",
-      "description": "Izaberite profesionalca, obavite posao, podijelite iskustvo"
+      "description": "Uporedite ponude koje stignu i izaberite"
     },
     "hero": {
       "eyebrow": "Kako Glatko funkcioniše",
-      "title": "Tri koraka od zahtjeva do gotovog posla",
-      "subtitle": "Reci nam šta ti treba, primi ponude od provjerenih bokeških profesionalaca, izaberi onog kome vjeruješ."
+      "title": "Tri koraka, a u sredini čovjek",
+      "subtitle": "Opišite šta vam treba, mi pregledamo zahtjev i obavijestimo provjerene profesionalce širom Crne Gore, a vi uporedite ponude koje stignu."
     },
     "steps": {
       "s1": {
         "title": "Reci nam šta ti treba",
-        "desc": "Izaberi kategoriju, odgovori na par pitanja, dodaj fotografije po potrebi. Oko 2 minuta."
+        "desc": "Izaberite kategoriju, odgovorite na par kratkih pitanja, dodajte fotografije ako pomažu. Besplatno je i ne treba vam nalog."
       },
       "s2": {
-        "title": "Uporedi ponude i razgovaraj",
-        "desc": "Za nekoliko sati primaš ponude od provjerenih profesionalaca. Pišite, pitajte, vidite ocjene."
+        "title": "Osoba pregleda zahtjev",
+        "desc": "Svaki zahtjev se pročita prije nego što izađe. Zatim stiže provjerenim profesionalcima koji odgovaraju vašem poslu, a ne spisku svih."
       },
       "s3": {
-        "title": "Izaberi profesionalca i završi",
-        "desc": "Prihvati odgovarajuću ponudu. Po završetku ostavi recenziju — tako držimo standard visoko."
+        "title": "Uporedite ponude i izaberite",
+        "desc": "Ponude vam stižu e-poštom i na WhatsApp, na vašem jeziku. Uporedite ih, pitajte, i izaberite profesionalca koji vam odgovara."
       }
     },
     "foundingCallout": {
-      "title": "Prvih 100 klijenata dobija osnivačku oznaku + 5 besplatnih kredita",
+      "title": "Prvih 100 klijenata dobija osnivačku oznaku",
       "body": "U fazi smo soft launch-a. Budi među prvih 100 koji pošalju zahtjev — osnivačke pogodnosti dobijaš automatski.",
       "cta": "Pogledaj pogodnosti"
     },
@@ -198,7 +198,7 @@
   },
   "cta": {
     "title": "Spremni da počnete?",
-    "subtitle": "Napravite prvi korak — besplatna ponuda za 60 sekundi",
+    "subtitle": "Napravite prvi korak — opisivanje posla je besplatno",
     "button": "Zatražite uslugu",
     "pro": {
       "title": "Vi ste profesionalac?",
@@ -400,7 +400,7 @@
       "mission": "Our mission is to make finding reliable service providers in Montenegro effortless, transparent, and secure.",
       "location": "Based in Budva, we are active across Budva, Kotor, and Tivat — with plans to expand throughout Montenegro.",
       "services": "From villa cleaning and renovation to boat maintenance and captain hire, Glatko covers a wide range of professional services.",
-      "howItWorks": "Our platform uses a transparent bidding system: you describe what you need, verified professionals submit quotes, and you choose the best fit.",
+      "howItWorks": "Our platform uses a transparent quote system: you describe what you need, we review the request and notify matched verified professionals, and you choose from the quotes that come back.",
       "languages": "Glatko is available in 9 languages: Turkish, English, Russian, German, Italian, Ukrainian, Serbian, Montenegrin, and Arabic.",
       "operator": "Glatkom upravlja RONA LEGAL DOO, društvo registrovano u Crnoj Gori (PIB 04390768).",
       "contactEmail": "contact@glatko.app",
@@ -2430,11 +2430,11 @@
       "howItWorks": {
         "headline": "Kako funkcioniše",
         "step1Title": "Opišite posao",
-        "step1Body": "Recite nam šta vam treba i gdje — besplatno je i traje minut.",
-        "step2Title": "Uporedite ponude",
-        "step2Body": "Provjereni stručnjaci šalju vam ponude sa cijenama i rokovima.",
-        "step3Title": "Izaberite i počnite",
-        "step3Body": "Pogledajte ocjene i recenzije, pa izaberite stručnjaka koji vam odgovara."
+        "step1Body": "Recite nam šta vam treba i gdje. Besplatno je i ne treba vam nalog.",
+        "step2Title": "Pregledamo i povežemo",
+        "step2Body": "Osoba pročita vaš zahtjev, zatim se obavještavaju provjereni stručnjaci koji odgovaraju poslu.",
+        "step3Title": "Uporedite i izaberite",
+        "step3Body": "Uporedite ponude koje stignu i izaberite stručnjaka koji vam odgovara."
       },
       "costGuide": {
         "headline": "Okvirne cijene",

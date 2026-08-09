@@ -136,40 +136,40 @@
   },
   "howItWorks": {
     "title": "Come Funziona",
-    "subtitle": "Servizio professionale in 3 semplici passi",
+    "subtitle": "Servizio professionale in 3 passi",
     "step1": {
       "title": "Richiedi un Servizio",
       "description": "Descrivi le tue esigenze in dettaglio e allega delle foto"
     },
     "step2": {
       "title": "Confronta i Preventivi",
-      "description": "Ricevi preventivi da professionisti verificati"
+      "description": "I professionisti verificati adatti al tuo lavoro vengono avvisati"
     },
     "step3": {
       "title": "Completa & Valuta",
-      "description": "Scegli il tuo professionista, fai eseguire il lavoro, condividi la tua esperienza"
+      "description": "Confronta i preventivi che arrivano e scegli"
     },
     "hero": {
       "eyebrow": "Come funziona Glatko",
-      "title": "Tre passi dalla richiesta al lavoro fatto",
-      "subtitle": "Dicci cosa ti serve, ricevi offerte da pro verificati delle Bocche, scegli quello di cui ti fidi."
+      "title": "Tre passi, e in mezzo una persona",
+      "subtitle": "Descrivi cosa ti serve, esaminiamo la richiesta e avvisiamo professionisti verificati in tutto il Montenegro, e tu confronti i preventivi che arrivano."
     },
     "steps": {
       "s1": {
         "title": "Dicci cosa ti serve",
-        "desc": "Scegli una categoria, rispondi a brevi domande, allega foto se utile. Circa 2 minuti."
+        "desc": "Scegli una categoria, rispondi a brevi domande, allega foto se aiutano. È gratis e non serve un account."
       },
       "s2": {
-        "title": "Confronta offerte e chatta",
-        "desc": "Entro poche ore ricevi offerte da pro verificati. Scrivi, fai domande, vedi le valutazioni."
+        "title": "Una persona la esamina",
+        "desc": "Ogni richiesta viene letta prima di uscire. Poi raggiunge i professionisti verificati adatti al tuo lavoro, non un elenco di tutti."
       },
       "s3": {
-        "title": "Scegli un pro e completa",
-        "desc": "Accetta l'offerta giusta. A lavoro completato, lascia una recensione — così manteniamo alto il livello."
+        "title": "Confronta i preventivi e scegli",
+        "desc": "I preventivi ti arrivano via email e su WhatsApp, nella tua lingua. Confrontali, fai domande e scegli il professionista adatto."
       }
     },
     "foundingCallout": {
-      "title": "I primi 100 clienti ricevono badge Founding + 5 crediti gratis",
+      "title": "I primi 100 clienti ricevono il badge Founding Customer",
       "body": "Siamo in soft launch. Sii tra i primi 100 a inviare una richiesta — i benefit Founding sono automatici.",
       "cta": "Vedi i benefit"
     },
@@ -198,7 +198,7 @@
   },
   "cta": {
     "title": "Pronto per Iniziare?",
-    "subtitle": "Fai il primo passo — ricevi un preventivo gratuito in 60 secondi",
+    "subtitle": "Fai il primo passo — descrivere il tuo lavoro è gratis",
     "button": "Richiedi un Servizio",
     "pro": {
       "title": "Sei un Professionista?",
@@ -400,7 +400,7 @@
       "mission": "Our mission is to make finding reliable service providers in Montenegro effortless, transparent, and secure.",
       "location": "Based in Budva, we are active across Budva, Kotor, and Tivat — with plans to expand throughout Montenegro.",
       "services": "From villa cleaning and renovation to boat maintenance and captain hire, Glatko covers a wide range of professional services.",
-      "howItWorks": "Our platform uses a transparent bidding system: you describe what you need, verified professionals submit quotes, and you choose the best fit.",
+      "howItWorks": "Our platform uses a transparent quote system: you describe what you need, we review the request and notify matched verified professionals, and you choose from the quotes that come back.",
       "languages": "Glatko is available in 9 languages: Turkish, English, Russian, German, Italian, Ukrainian, Serbian, Montenegrin, and Arabic.",
       "operator": "Glatko è gestita da RONA LEGAL DOO, una società registrata in Montenegro (PIB 04390768).",
       "contactEmail": "contact@glatko.app",
@@ -2430,11 +2430,11 @@
       "howItWorks": {
         "headline": "Come funziona",
         "step1Title": "Descrivi il lavoro",
-        "step1Body": "Dicci cosa ti serve e dove — è gratis e richiede un minuto.",
-        "step2Title": "Confronta i preventivi",
-        "step2Body": "Professionisti verificati ti inviano preventivi con prezzi e tempi.",
-        "step3Title": "Scegli e inizia",
-        "step3Body": "Controlla valutazioni e recensioni, poi scegli il professionista adatto."
+        "step1Body": "Dicci cosa ti serve e dove. È gratis e non serve un account.",
+        "step2Title": "Esaminiamo e abbiniamo",
+        "step2Body": "Una persona legge la tua richiesta, poi vengono avvisati i professionisti verificati adatti al lavoro.",
+        "step3Title": "Confronta e scegli",
+        "step3Body": "Confronta i preventivi che arrivano e scegli il professionista adatto."
       },
       "costGuide": {
         "headline": "Guida ai prezzi",
