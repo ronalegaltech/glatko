@@ -1700,7 +1700,7 @@
   },
   "seo": {
     "providersTitle": "Stručnjaci — Glatko",
-    "providersDesc": "Otkrijte proverene, pouzdane stručnjake širom Crne Gore na Glatku. Pregledajte profile, ocene i obavljene poslove, pa zatražite besplatne ponude za svoj projekat.",
+    "providersDesc": "Otkrijte proverene, pouzdane stručnjake širom Crne Gore na Glatku. Pregledajte proverene profile, pa zatražite besplatne ponude za svoj projekat.",
     "landingTitle": "Glatko — Премијум сервисна платформа Црне Горе",
     "homeTitle": "Премијум сервисна платформа Црне Горе",
     "landingDesc": "Pronađite proverene stručnjake širom Crne Gore za svaku uslugu za dom ili biznis. Objavite zahtev besplatno i uporedite ponude pouzdanih stručnjaka na Glatku.",
@@ -1853,9 +1853,9 @@
     "faq": {
       "title": "Често постављана питања",
       "q1": "Kako se proveravaju stručnjaci na Glatku?",
-      "a1": "Svaki stručnjak prolazi proveru pre nego što može da nudi usluge na Glatku. Proveravamo identitet i poslovne podatke, a naši prvi stručnjaci dodatno se proveravaju lično. Ocene i recenzije dolaze isključivo iz stvarnih, završenih poslova, pa povratne informacije koje vidite odražavaju pravi rad, a ne anonimne registracije.",
+      "a1": "Svaki stručnjak prolazi proveru pre nego što može da nudi usluge na Glatku. Proveravamo identitet i poslovne podatke, a naši prvi stručnjaci dodatno se proveravaju lično.",
       "q2": "Kako da izaberem između stručnjaka?",
-      "a2": "Kada objavite zahtev, nekoliko stručnjaka vam šalje svoje ponude. Možete da uporedite njihove cene, profile, ocene i završene poslove, pa da izaberete onog koji vam najviše odgovara. Pošto se stručnjaci nadmeću za vaš posao, odluka ostaje u vašim rukama i nikada niste obavezni da prihvatite nijednu ponudu.",
+      "a2": "Kada objavite zahtev, nekoliko stručnjaka vam šalje svoje ponude. Možete da uporedite njihove cene i profile, pa da izaberete onog koji vam najviše odgovara. Pošto se stručnjaci nadmeću za vaš posao, odluka ostaje u vašim rukama i nikada niste obavezni da prihvatite nijednu ponudu.",
       "q3": "Da li je korišćenje Glatka besplatno?",
       "a3": "Jeste. Objavljivanje zahteva i primanje ponuda potpuno je besplatno za korisnike. Plaćate samo stručnjaka kojeg izaberete, po ceni koju dogovorite direktno sa njim. Glatko ne dodaje nikakvu dodatnu naknadu na cenu stručnjaka.",
       "q4": "Koliko naplaćuju stručnjaci?",
@@ -2087,7 +2087,7 @@
     "pro": {
       "hero": {
         "eyebrow": "Program osnivačkog profesionalca",
-        "title": "Postani jedan od prvih 50 proverenih profesionalaca u Boki",
+        "title": "Postani jedan od prvih 50 proverenih profesionalaca u Crnoj Gori",
         "subtitle": "Doživotna osnivačka oznaka, 3 meseca besplatnog isticanja u 2. godini i prilika da oblikuješ platformu.",
         "cta": "Prijavi se",
         "secondaryCta": "Kako funkcioniše"
@@ -2104,13 +2104,13 @@
         },
         "firstClient": {
           "title": "Prednost prvog igrača",
-          "desc": "Dosegni klijente Boke pre konkurencije. Izgradi istoriju recenzija ranije."
+          "desc": "Dosegni klijente širom Crne Gore pre konkurencije."
         }
       },
       "eligibility": {
         "title": "Ko može da se prijavi",
-        "subtitle": "Soft launch je fokusiran na Boku — kvalitet ispred kvantiteta u 1. godini.",
-        "boka": "Aktivan u Budvi, Kotoru ili Tivtu",
+        "subtitle": "Kvalitet ispred kvantiteta u 1. godini.",
+        "location": "Aktivan bilo gde u Crnoj Gori",
         "verified": "Spreman za ličnu i poslovnu proveru",
         "portfolio": "Najmanje 3 primera portfolija i jedan dokument firme",
         "experience": "2+ godine profesionalnog iskustva u tvojoj kategoriji"
@@ -2120,7 +2120,7 @@
         "t1": {
           "date": "Maj 2026",
           "title": "Javni soft launch",
-          "desc": "Glatko se otvara za Boku. Prvih 50 odobrenih pro postaju Osnivači."
+          "desc": "Glatko se otvara širom Crne Gore. Prvih 50 odobrenih pro postaju Osnivači."
         },
         "t2": {
           "date": "Avg 2026",
@@ -2153,8 +2153,8 @@
           "answer": "Ne. Glatko je tokom soft launch-a besplatan i za klijente i za profesionalce."
         },
         "q4": {
-          "question": "Šta ako nisam u Boki?",
-          "answer": "Tokom 2026. širićemo se na druge gradove Crne Gore. Možeš se registrovati i javićemo kad se tvoj kraj otvori."
+          "question": "Da li je bitan moj grad?",
+          "answer": "Ne. Osnivački profesionalci odobreni su širom Crne Gore — Podgorica, Budva, Bar, Kotor, Tivat, Herceg Novi, Nikšić i Berane. Prijavi se odakle god radiš."
         },
         "q5": {
           "question": "Koliko traje provera?",
@@ -2174,30 +2174,26 @@
     "customer": {
       "hero": {
         "eyebrow": "Program osnivačkog klijenta",
-        "title": "Budi među prvih 100 klijenata Glatka i dobij 5 besplatnih kredita",
-        "subtitle": "Oznaka osnivačkog klijenta, 5 besplatnih kredita i prioritetna podrška — jer si u prvom talasu.",
+        "title": "Budi među prvih 100 klijenata Glatka",
+        "subtitle": "Oznaka osnivačkog klijenta i prioritetna podrška — jer si u prvom talasu.",
         "cta": "Pošalji prvi zahtev"
       },
       "benefits": {
         "title": "Šta dobijaš",
         "b1": {
           "title": "Oznaka osnivačkog klijenta",
-          "desc": "Ljubičasta oznaka na recenzijama i u razgovoru — profesionalci te shvataju ozbiljno od prvog dana."
-        },
-        "b2": {
-          "title": "5 besplatnih kredita za zahteve",
-          "desc": "Koristi ih kad god želiš u svim kategorijama — bez isteka, bez uslova."
+          "desc": "Ljubičasta oznaka uz tvoje ime u razgovoru — profesionalci te shvataju ozbiljno od prvog dana."
         },
         "b3": {
           "title": "Prioritetna podrška + preporuke",
-          "desc": "Direktan kanal do tima i bonus krediti kad pozoveš prijatelje."
+          "desc": "Direktan kanal do našeg tima za bilo koje pitanje."
         }
       },
       "howToBecome": {
         "title": "Kako postati osnivački klijent",
         "step1": "Otvori besplatan nalog na Glatku (~30 sekundi).",
-        "step2": "Pošalji prvi zahtev za uslugu — bilo koja kategorija, bilo koji grad u Boki.",
-        "step3": "Ako si među prvih 100, oznaka i 5 kredita se dodaju automatski."
+        "step2": "Pošalji prvi zahtev za uslugu — bilo koja kategorija, bilo koji grad u Crnoj Gori.",
+        "step3": "Ako si među prvih 100, oznaka se dodaje automatski."
       },
       "cta": {
         "title": "Pošalji prvi zahtev",
@@ -2456,7 +2452,7 @@
     "content": {
       "renovation-construction": {
         "podgorica": {
-          "intro": "Renoviranje doma ili poslovnog prostora u Podgorici zahteva pouzdane stručnjake i jasnu procenu troškova. Preko Glatka se povezujete sa proverenim stručnjacima iz Podgorice i okoline — od kompletnog renoviranja stana do pojedinačnih popravki. Uporedite ponude, pogledajte ocene i izaberite stručnjaka koji odgovara vašem budžetu i rokovima.",
+          "intro": "Renoviranje doma ili poslovnog prostora u Podgorici zahteva pouzdane stručnjake i jasnu procenu troškova. Preko Glatka se povezujete sa proverenim stručnjacima iz Podgorice i okoline — od kompletnog renoviranja stana do pojedinačnih popravki. Uporedite ponude koje stignu i izaberite stručnjaka koji odgovara vašem budžetu i rokovima.",
           "included1": "Kompletno renoviranje stanova i kuća",
           "included2": "Renoviranje kupatila i kuhinja",
           "included3": "Električne instalacije",
@@ -2475,14 +2471,14 @@
           "faqQ2": "Koliko traje prosečno renoviranje?",
           "faqA2": "Manji radovi i kozmetičke prepravke obično se završe za nekoliko dana. Renoviranje kupatila traje oko jedne do dve nedelje, a kompletna adaptacija stana srednje veličine između četiri i osam nedelja, u zavisnosti od složenosti.",
           "faqQ3": "Da li su stručnjaci na Glatku provereni?",
-          "faqA3": "Da. Stručnjaci prolaze proveru pre nego što se pojave u rezultatima. Na svakom profilu možete videti ocene, broj recenzija i prethodne radove kako biste odlučili sa poverenjem.",
+          "faqA3": "Da. Identitet i poslovni podaci proveravaju se pre nego što se stručnjak pojavi u rezultatima. Nakon toga uporedite ponude koje stignu i sami odlučite — niste obavezni da prihvatite nijednu.",
           "faqQ4": "Kako da pripremim prostor za radove?",
           "faqA4": "Uklonite vredne i lomljive predmete, obezbedite pristup vodi i struji i dogovorite sa stručnjakom termine i način odvoženja otpada. Dobar stručnjak će vam pre početka dati jasan plan radova i procenu trajanja."
         }
       },
       "electrical": {
         "podgorica": {
-          "intro": "Elektro radovi zahtevaju kvalifikovane i pouzdane stručnjake — od manjih popravki do kompletnih instalacija. Glatko vas povezuje sa proverenim stručnjacima za elektriku iz Podgorice i okoline, za bezbedne radove svakog obima. Uporedite ponude, pogledajte ocene i izaberite stručnjaka koji odgovara vašim potrebama i budžetu.",
+          "intro": "Elektro radovi zahtevaju kvalifikovane i pouzdane stručnjake — od manjih popravki do kompletnih instalacija. Glatko vas povezuje sa proverenim stručnjacima za elektriku iz Podgorice i okoline, za bezbedne radove svakog obima. Uporedite ponude koje stignu i izaberite stručnjaka koji odgovara vašim potrebama i budžetu.",
           "included1": "Ugradnja utičnica i prekidača",
           "included2": "Zamena razvodne table",
           "included3": "Montaža rasvete",
@@ -2507,7 +2503,7 @@
       },
       "kitchen-bathroom": {
         "podgorica": {
-          "intro": "Kompletno renoviranje kuhinje ili kupatila jedan je od najefikasnijih načina da unapredite dom. Glatko vas povezuje sa proverenim stručnjacima iz Podgorice i okoline koji rade sve — od pločica i hidroizolacije do montaže sanitarija i nameštaja. Uporedite ponude, pogledajte ocene i izaberite stručnjaka koji odgovara vašem budžetu i rokovima.",
+          "intro": "Kompletno renoviranje kuhinje ili kupatila jedan je od najefikasnijih načina da unapredite dom. Glatko vas povezuje sa proverenim stručnjacima iz Podgorice i okoline koji rade sve — od pločica i hidroizolacije do montaže sanitarija i nameštaja. Uporedite ponude koje stignu i izaberite stručnjaka koji odgovara vašem budžetu i rokovima.",
           "included1": "Kompletno renoviranje kupatila",
           "included2": "Kompletno renoviranje kuhinje",
           "included3": "Postavljanje pločica i hidroizolacija",
@@ -2530,9 +2526,9 @@
           "faqA4": "Izbor materijala i nivo završne obrade (pločice, sanitarije, nameštaj), obim vodovodnih i električnih prepravki i stanje postojećeg prostora. Najveće razlike u ceni obično prave rad i završna obrada — ne same pločice."
         }
       },
-      "plumbing-renov": {
+      "plumbing": {
         "podgorica": {
-          "intro": "Od slavine koja kaplje do kompletne zamene cevi — vodoinstalaterski radovi traže brz i pouzdan odgovor. Glatko vas povezuje sa proverenim stručnjacima za vodoinstalaterske radove iz Podgorice i okoline. Uporedite ponude, pogledajte ocene i izaberite stručnjaka koji odgovara vašim potrebama i rokovima.",
+          "intro": "Od slavine koja kaplje do kompletne zamene cevi — vodoinstalaterski radovi traže brz i pouzdan odgovor. Glatko vas povezuje sa proverenim stručnjacima za vodoinstalaterske radove iz Podgorice i okoline. Uporedite ponude koje stignu i izaberite stručnjaka koji odgovara vašim potrebama i rokovima.",
           "included1": "Otkrivanje i popravka curenja",
           "included2": "Montaža i zamena bojlera",
           "included3": "Zamena slavina i ventila",

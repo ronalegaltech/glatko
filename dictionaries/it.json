@@ -1700,7 +1700,7 @@
   },
   "seo": {
     "providersTitle": "Professionisti — Glatko",
-    "providersDesc": "Scopri professionisti verificati e affidabili in tutto il Montenegro su Glatko. Sfoglia profili, recensioni e lavori, poi richiedi preventivi gratuiti.",
+    "providersDesc": "Scopri professionisti verificati e affidabili in tutto il Montenegro su Glatko. Sfoglia i profili verificati, poi richiedi preventivi gratuiti.",
     "landingTitle": "Glatko — La piattaforma di servizi premium del Montenegro",
     "homeTitle": "La piattaforma di servizi premium del Montenegro",
     "landingDesc": "Trova professionisti verificati in tutto il Montenegro per qualsiasi servizio, casa o impresa. Pubblica gratis la richiesta e confronta i preventivi su Glatko.",
@@ -1853,9 +1853,9 @@
     "faq": {
       "title": "Domande frequenti",
       "q1": "Come vengono verificati i professionisti su Glatko?",
-      "a1": "Ogni professionista viene controllato prima di poter offrire i propri servizi su Glatko. Verifichiamo l'identità e i dati dell'attività, e i professionisti fondatori vengono valutati personalmente. Le valutazioni e le recensioni provengono soltanto da lavori reali e portati a termine, così i giudizi che leggi riflettono il lavoro effettivo e non semplici iscrizioni anonime.",
+      "a1": "Ogni professionista viene controllato prima di poter offrire i propri servizi su Glatko. Verifichiamo l'identità e i dati dell'attività, e i professionisti fondatori vengono valutati personalmente.",
       "q2": "Come scelgo tra i professionisti?",
-      "a2": "Quando pubblichi una richiesta, diversi professionisti ti inviano le loro offerte. Puoi confrontare prezzi, profili, valutazioni e lavori svolti, per poi scegliere chi fa al caso tuo. Poiché i professionisti competono per il tuo lavoro, la decisione resta sempre nelle tue mani e non sei mai obbligato ad accettare alcuna offerta.",
+      "a2": "Quando pubblichi una richiesta, diversi professionisti ti inviano le loro offerte. Puoi confrontare prezzi e profili, per poi scegliere chi fa al caso tuo. Poiché i professionisti competono per il tuo lavoro, la decisione resta sempre nelle tue mani e non sei mai obbligato ad accettare alcuna offerta.",
       "q3": "Glatko è gratuito?",
       "a3": "Sì. Pubblicare una richiesta e ricevere offerte è completamente gratuito per i clienti. Paghi solo il professionista che scegli, al prezzo che concordi direttamente con lui. Glatko non aggiunge alcun costo extra al prezzo del professionista.",
       "q4": "Quanto fanno pagare i professionisti?",
@@ -2084,7 +2084,7 @@
     "pro": {
       "hero": {
         "eyebrow": "Programma Founding Provider",
-        "title": "Diventa uno dei primi 50 professionisti di Glatko nelle Bocche di Cattaro",
+        "title": "Diventa uno dei primi 50 professionisti di Glatko in Montenegro",
         "subtitle": "Badge Founding a vita, 3 mesi di placement in evidenza nel secondo anno, e possibilità di plasmare la piattaforma.",
         "cta": "Candidati ora",
         "secondaryCta": "Come funziona"
@@ -2101,13 +2101,13 @@
         },
         "firstClient": {
           "title": "Vantaggio del primo arrivato",
-          "desc": "Raggiungi i clienti delle Bocche prima che arrivino i concorrenti. Costruisci presto la tua storia di recensioni."
+          "desc": "Raggiungi i clienti in tutto il Montenegro prima che arrivino i concorrenti."
         }
       },
       "eligibility": {
         "title": "Chi può candidarsi",
-        "subtitle": "Soft launch focalizzato sulle Bocche — qualità prima della quantità nel primo anno.",
-        "boka": "Operativo a Budva, Cattaro o Teodo",
+        "subtitle": "Qualità prima della quantità nel primo anno.",
+        "location": "Operativo ovunque in Montenegro",
         "verified": "Disposto a completare la verifica identità + business",
         "portfolio": "Almeno 3 esempi di portfolio e un documento aziendale",
         "experience": "2+ anni di esperienza professionale nella tua categoria"
@@ -2117,7 +2117,7 @@
         "t1": {
           "date": "Mag 2026",
           "title": "Soft launch pubblico",
-          "desc": "Glatko apre per le Bocche di Cattaro. I primi 50 pro approvati diventano Founding."
+          "desc": "Glatko apre in tutto il Montenegro. I primi 50 pro approvati diventano Founding."
         },
         "t2": {
           "date": "Ago 2026",
@@ -2150,8 +2150,8 @@
           "answer": "No. Glatko è gratis per clienti e pro durante il soft launch."
         },
         "q4": {
-          "question": "Se non sono nelle Bocche?",
-          "answer": "Ci espanderemo in altre città del Montenegro durante il 2026. Puoi registrarti — ti avviseremo quando aprirà la tua zona."
+          "question": "La mia città conta?",
+          "answer": "No. I professionisti fondatori sono stati approvati in tutto il Montenegro — Podgorica, Budva, Bar, Cattaro, Teodo, Castelnuovo, Nikšić e Berane. Candidati da dove lavori."
         },
         "q5": {
           "question": "Quanto dura la verifica?",
@@ -2171,30 +2171,26 @@
     "customer": {
       "hero": {
         "eyebrow": "Programma Founding Customer",
-        "title": "Sii uno dei primi 100 clienti Glatko e ottieni 5 crediti gratis",
-        "subtitle": "Badge Founding Customer, 5 crediti richiesta gratis e supporto prioritario — il riconoscimento per essere nella prima ondata.",
+        "title": "Sii uno dei primi 100 clienti Glatko",
+        "subtitle": "Badge Founding Customer e supporto prioritario — il riconoscimento per essere nella prima ondata.",
         "cta": "Invia la tua prima richiesta"
       },
       "benefits": {
         "title": "Cosa ottieni",
         "b1": {
           "title": "Badge Founding Customer",
-          "desc": "Badge viola su recensioni e chat — i pro ti prendono sul serio dal giorno 1."
-        },
-        "b2": {
-          "title": "5 crediti richiesta gratis",
-          "desc": "Usali quando vuoi su tutte le categorie — nessuna scadenza, nessun vincolo."
+          "desc": "Badge viola sul tuo nome in chat — i professionisti ti prendono sul serio dal giorno 1."
         },
         "b3": {
           "title": "Supporto prioritario + referral",
-          "desc": "Filo diretto con il team, crediti extra quando inviti amici."
+          "desc": "Filo diretto con il nostro team per qualsiasi problema."
         }
       },
       "howToBecome": {
         "title": "Come diventare Founding Customer",
         "step1": "Crea un account gratuito su Glatko (~30 secondi).",
-        "step2": "Invia la prima richiesta — qualsiasi categoria, qualsiasi città delle Bocche.",
-        "step3": "Se sei tra i primi 100, badge e 5 crediti vengono assegnati automaticamente."
+        "step2": "Invia la prima richiesta — qualsiasi categoria, qualsiasi città del Montenegro.",
+        "step3": "Se sei tra i primi 100, il badge viene assegnato automaticamente."
       },
       "cta": {
         "title": "Invia la prima richiesta",
@@ -2456,7 +2452,7 @@
     "content": {
       "renovation-construction": {
         "podgorica": {
-          "intro": "Ristrutturare una casa o un locale commerciale a Podgorica richiede professionisti affidabili e un'idea chiara dei costi. Glatko ti mette in contatto con professionisti verificati a Podgorica e dintorni — dalla ristrutturazione completa di un appartamento alle singole riparazioni. Confronta i preventivi, controlla le valutazioni e scegli il professionista adatto al tuo budget e ai tuoi tempi.",
+          "intro": "Ristrutturare una casa o un locale commerciale a Podgorica richiede professionisti affidabili e un'idea chiara dei costi. Glatko ti mette in contatto con professionisti verificati a Podgorica e dintorni — dalla ristrutturazione completa di un appartamento alle singole riparazioni. Confronta i preventivi che ricevi e scegli il professionista adatto al tuo budget e ai tuoi tempi.",
           "included1": "Ristrutturazione completa di appartamenti e case",
           "included2": "Ristrutturazione di bagni e cucine",
           "included3": "Impianti elettrici",
@@ -2475,14 +2471,14 @@
           "faqQ2": "Quanto dura una ristrutturazione media?",
           "faqA2": "I lavori più piccoli e i ritocchi estetici di solito si concludono in pochi giorni. La ristrutturazione di un bagno richiede circa una o due settimane, mentre la ristrutturazione completa di un appartamento di medie dimensioni dura dalle quattro alle otto settimane, a seconda della complessità.",
           "faqQ3": "I professionisti su Glatko sono verificati?",
-          "faqA3": "Sì. I professionisti vengono controllati prima di comparire nei risultati. Su ogni profilo puoi vedere le valutazioni, il numero di recensioni e i lavori precedenti, così puoi scegliere in tutta tranquillità.",
+          "faqA3": "Sì. L'identità e i dati dell'attività vengono verificati prima che un professionista compaia nei risultati. Poi confronti i preventivi che ricevi e decidi tu, senza alcun obbligo di accettarne uno.",
           "faqQ4": "Come preparo lo spazio per i lavori?",
           "faqA4": "Rimuovi gli oggetti di valore e quelli fragili, assicurati che ci sia accesso ad acqua e corrente e concorda con il professionista i tempi e lo smaltimento dei rifiuti. Un buon professionista ti fornirà un piano di lavoro chiaro e una stima dei tempi prima di iniziare."
         }
       },
       "electrical": {
         "podgorica": {
-          "intro": "I lavori elettrici richiedono professionisti qualificati e affidabili — dalle piccole riparazioni agli impianti completi. Glatko ti mette in contatto con professionisti verificati per lavori elettrici a Podgorica e dintorni, per interventi sicuri di qualsiasi entità. Confronta i preventivi, controlla le valutazioni e scegli il professionista adatto alle tue esigenze e al tuo budget.",
+          "intro": "I lavori elettrici richiedono professionisti qualificati e affidabili — dalle piccole riparazioni agli impianti completi. Glatko ti mette in contatto con professionisti verificati per lavori elettrici a Podgorica e dintorni, per interventi sicuri di qualsiasi entità. Confronta i preventivi che ricevi e scegli il professionista adatto alle tue esigenze e al tuo budget.",
           "included1": "Installazione di prese e interruttori",
           "included2": "Sostituzione del quadro elettrico",
           "included3": "Installazione dell'illuminazione",
@@ -2507,7 +2503,7 @@
       },
       "kitchen-bathroom": {
         "podgorica": {
-          "intro": "La ristrutturazione completa della cucina o del bagno è uno dei modi più efficaci per valorizzare la casa. Glatko ti mette in contatto con professionisti verificati a Podgorica e dintorni che si occupano di tutto — dalla posa di piastrelle e impermeabilizzazione al montaggio di sanitari e mobili. Confronta i preventivi, controlla le valutazioni e scegli il professionista adatto al tuo budget e ai tuoi tempi.",
+          "intro": "La ristrutturazione completa della cucina o del bagno è uno dei modi più efficaci per valorizzare la casa. Glatko ti mette in contatto con professionisti verificati a Podgorica e dintorni che si occupano di tutto — dalla posa di piastrelle e impermeabilizzazione al montaggio di sanitari e mobili. Confronta i preventivi che ricevi e scegli il professionista adatto al tuo budget e ai tuoi tempi.",
           "included1": "Ristrutturazione completa del bagno",
           "included2": "Ristrutturazione completa della cucina",
           "included3": "Posa di piastrelle e impermeabilizzazione",
@@ -2530,9 +2526,9 @@
           "faqA4": "La scelta dei materiali e il livello delle finiture (piastrelle, sanitari, mobili), l'entità degli interventi sugli impianti idraulici ed elettrici e lo stato dello spazio esistente. Le differenze di prezzo maggiori dipendono di solito dalla manodopera e dalle finiture — non dalle piastrelle in sé."
         }
       },
-      "plumbing-renov": {
+      "plumbing": {
         "podgorica": {
-          "intro": "Da un rubinetto che gocciola alla sostituzione completa delle tubature — i lavori idraulici richiedono una risposta rapida e affidabile. Glatko ti mette in contatto con professionisti verificati per lavori idraulici a Podgorica e dintorni. Confronta i preventivi, controlla le valutazioni e scegli il professionista adatto alle tue esigenze e ai tuoi tempi.",
+          "intro": "Da un rubinetto che gocciola alla sostituzione completa delle tubature — i lavori idraulici richiedono una risposta rapida e affidabile. Glatko ti mette in contatto con professionisti verificati per lavori idraulici a Podgorica e dintorni. Confronta i preventivi che ricevi e scegli il professionista adatto alle tue esigenze e ai tuoi tempi.",
           "included1": "Individuazione e riparazione di perdite",
           "included2": "Installazione e sostituzione dello scaldabagno",
           "included3": "Sostituzione di rubinetti e valvole",

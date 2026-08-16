@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ArrowRight, Gift, Star, Users } from "lucide-react";
+import { ArrowRight, Star, Users } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { buildAlternates } from "@/lib/seo";
@@ -66,11 +66,10 @@ export default async function FoundingCustomerLandingPage({ params }: PageProps)
       title: t("benefits.b1.title"),
       desc: t("benefits.b1.desc"),
     },
-    {
-      icon: Gift,
-      title: t("benefits.b2.title"),
-      desc: t("benefits.b2.desc"),
-    },
+    // The "5 free request credits" card was removed with the claim behind it:
+    // free_credits is granted by migration 030 and read by no code path, and a
+    // request is free for every customer anyway, so there was nothing true to
+    // reword it into. Two cards is the honest set.
     {
       icon: Users,
       title: t("benefits.b3.title"),

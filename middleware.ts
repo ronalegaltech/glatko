@@ -5,6 +5,7 @@ import { enforceRateLimit } from '@/lib/rateLimit';
 import { locales, routing } from '@/i18n/routing';
 import { isHealthVerticalEnabled } from '@/lib/saglik/flags';
 import { isCareerVerticalEnabled } from '@/lib/kariyer/flags';
+import { RETIRED_SLUGS } from '@/lib/glatko/retired-slugs';
 import {
   HEALTH_FIRST_SEGMENTS,
   HEALTH_COMING_SOON_BARE_PATHS,
@@ -124,25 +125,25 @@ export async function middleware(request: NextRequest) {
         }
     }
 
-    // ── #132 follow-up: hard 308s for the 3 merged boat-service slugs ──────
+    // ── #132 follow-up: hard 308s for merged (retired) category slugs ──────
     // Migration 085 deactivated engine-service / captain-rental / electronics-gps
-    // (merged into their survivors). next.config redirects() only catch the EN
+    // and migration 119 deactivated plumbing-renov / electrical-renov, each
+    // merged into its survivor. next.config redirects() only catch the EN
     // `/services/<slug>` hub — verified on prod: the 8 localized segments
     // (/hizmetler, /uslugi, /dienstleistungen, …) and the /[city] variant fall
     // through to a 200. A real HTTP 308 across every locale + city suffix + query
     // can only be issued here (same reason as the block above). Slugs are
     // locale-neutral; the localized "/services" segment is derived from the
     // pathnames SSOT so it can't drift (see i18n/routing.ts "/services/[slug]").
+    //
+    // The `rest` passthrough is what carries the city: /en/services/
+    // plumbing-renov/podgorica → /en/services/plumbing/podgorica, which is the
+    // pair of duplicate-title URLs 119 exists to collapse.
     {
         const segs = pathname.split('/').filter(Boolean);
         if (segs.length >= 3 && isLocaleSegment(segs[0])) {
-            const RETIRED_BOAT_SLUGS: Record<string, string> = {
-                'engine-service': 'boat-engine-service',
-                'captain-rental': 'captain-daily',
-                'electronics-gps': 'electrical-electronics',
-            };
             const [locale, segment, slug, ...rest] = segs;
-            const survivor = RETIRED_BOAT_SLUGS[slug];
+            const survivor = RETIRED_SLUGS[slug];
             // Only the "/services/[slug]" entry (a pure locale→path object) is
             // cast; routing.pathnames as a whole has mixed string|object values.
             const servicesPaths = routing.pathnames['/services/[slug]'] as Record<

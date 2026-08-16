@@ -1700,7 +1700,7 @@
   },
   "seo": {
     "providersTitle": "Professionals — Glatko",
-    "providersDesc": "Discover verified, trusted professionals across Montenegro on Glatko. Browse profiles, ratings and completed work, then request free quotes for your project.",
+    "providersDesc": "Discover verified, trusted professionals across Montenegro on Glatko. Browse verified profiles, then request free quotes for your project.",
     "landingTitle": "Glatko — Montenegro's Premier Service Platform",
     "homeTitle": "Montenegro's Premier Service Platform",
     "landingDesc": "Find verified professionals across Montenegro for any home or business service. Post your request free and compare quotes from trusted local experts on Glatko.",
@@ -1853,9 +1853,9 @@
     "faq": {
       "title": "Frequently Asked Questions",
       "q1": "How are Glatko professionals verified?",
-      "a1": "Every professional is reviewed before they can offer services on Glatko. We check identity and business details, and our founding professionals are vetted personally. Ratings and reviews come only from real, completed jobs, so the feedback you see reflects actual work rather than anonymous sign-ups.",
+      "a1": "Every professional is reviewed before they can offer services on Glatko. We check identity and business details, and our founding professionals are vetted personally.",
       "q2": "How do I choose between professionals?",
-      "a2": "When you post a request, several professionals send you offers. You can compare their prices, profiles, ratings and completed jobs, then pick the one that fits you best. Because professionals compete for your job, the decision stays in your hands and you are never obliged to accept any offer.",
+      "a2": "When you post a request, several professionals send you offers. You can compare their prices and profiles, then pick the one that fits you best. Because professionals compete for your job, the decision stays in your hands and you are never obliged to accept any offer.",
       "q3": "Is Glatko free to use?",
       "a3": "Yes. Posting a request and receiving offers is completely free for customers. You only pay the professional you choose, at the price you agree on directly with them. Glatko does not add any extra fee on top of the professional’s price.",
       "q4": "How much do professionals charge?",
@@ -2084,7 +2084,7 @@
     "pro": {
       "hero": {
         "eyebrow": "Founding Provider Program",
-        "title": "Be one of Glatko's first 50 trusted professionals in Boka Bay",
+        "title": "Be one of Glatko's first 50 trusted professionals in Montenegro",
         "subtitle": "Lifetime Founding badge, 3 free months of featured placement in Year 2, and the chance to shape the platform.",
         "cta": "Apply now",
         "secondaryCta": "How it works"
@@ -2101,13 +2101,13 @@
         },
         "firstClient": {
           "title": "First-mover advantage",
-          "desc": "Reach Boka Bay customers before competitors arrive. Build your review history early."
+          "desc": "Reach customers across Montenegro before competitors arrive."
         }
       },
       "eligibility": {
         "title": "Who can apply",
-        "subtitle": "Soft launch is Boka Bay-focused — we want quality over quantity in Year 1.",
-        "boka": "Operating in Budva, Kotor, or Tivat",
+        "subtitle": "We want quality over quantity in Year 1.",
+        "location": "Operating anywhere in Montenegro",
         "verified": "Willing to complete identity + business verification",
         "portfolio": "At least 3 portfolio examples and one company document",
         "experience": "2+ years of professional experience in your category"
@@ -2117,7 +2117,7 @@
         "t1": {
           "date": "May 2026",
           "title": "Public soft launch",
-          "desc": "Glatko opens for Boka Bay. First 50 approved pros become Founding Providers."
+          "desc": "Glatko opens across Montenegro. First 50 approved pros become Founding Providers."
         },
         "t2": {
           "date": "Aug 2026",
@@ -2150,8 +2150,8 @@
           "answer": "No. Glatko is free for both customers and pros during the soft-launch phase."
         },
         "q4": {
-          "question": "What if I'm not in Boka Bay?",
-          "answer": "We'll expand to other Montenegrin cities throughout 2026. You can still register and we'll let you know when your area opens."
+          "question": "Does my city matter?",
+          "answer": "No. Founding Providers have been approved across Montenegro — Podgorica, Budva, Bar, Kotor, Tivat, Herceg Novi, Nikšić and Berane. Apply from wherever you work."
         },
         "q5": {
           "question": "How long does verification take?",
@@ -2171,30 +2171,26 @@
     "customer": {
       "hero": {
         "eyebrow": "Founding Customer Program",
-        "title": "Be one of Glatko's first 100 customers and get 5 free credits",
-        "subtitle": "Founding Customer badge, 5 free request credits, and priority support — for being part of the first wave.",
+        "title": "Be one of Glatko's first 100 customers",
+        "subtitle": "Founding Customer badge and priority support — for being part of the first wave.",
         "cta": "Submit your first request"
       },
       "benefits": {
         "title": "What you get",
         "b1": {
           "title": "Founding Customer badge",
-          "desc": "A purple badge on your reviews and chat handle — pros take you seriously from day one."
-        },
-        "b2": {
-          "title": "5 free request credits",
-          "desc": "Use them whenever you need a service across all categories — no expiry, no strings."
+          "desc": "A purple badge on your chat handle — pros take you seriously from day one."
         },
         "b3": {
           "title": "Priority support + referrals",
-          "desc": "Direct line to our team for any issue, plus extra credits when you refer friends."
+          "desc": "Direct line to our team for any issue."
         }
       },
       "howToBecome": {
         "title": "How to become a Founding Customer",
         "step1": "Create a free account on Glatko (takes ~30 seconds).",
-        "step2": "Submit your first service request — any category, any city in Boka Bay.",
-        "step3": "If you're among the first 100 to do so, your badge and 5 credits land automatically."
+        "step2": "Submit your first service request — any category, any city in Montenegro.",
+        "step3": "If you're among the first 100 to do so, your badge lands automatically."
       },
       "cta": {
         "title": "Submit your first request",
@@ -2456,7 +2452,7 @@
     "content": {
       "renovation-construction": {
         "podgorica": {
-          "intro": "Renovating a home or business space in Podgorica calls for reliable professionals and a clear sense of cost. Glatko connects you with verified professionals across Podgorica and the surrounding area — from a full apartment renovation to individual repairs. Compare quotes, check ratings, and choose the professional that fits your budget and timeline.",
+          "intro": "Renovating a home or business space in Podgorica calls for reliable professionals and a clear sense of cost. Glatko connects you with verified professionals across Podgorica and the surrounding area — from a full apartment renovation to individual repairs. Compare the quotes that come back and choose the professional that fits your budget and timeline.",
           "included1": "Full apartment and house renovation",
           "included2": "Bathroom and kitchen renovation",
           "included3": "Electrical installations",
@@ -2475,14 +2471,14 @@
           "faqQ2": "How long does a typical renovation take?",
           "faqA2": "Minor jobs and cosmetic touch-ups are usually done in a few days. A bathroom renovation takes about one to two weeks, and a full renovation of a mid-sized apartment between four and eight weeks, depending on complexity.",
           "faqQ3": "Are the professionals on Glatko verified?",
-          "faqA3": "Yes. Professionals are checked before they appear in results. On each profile you can see ratings, the number of reviews, and previous work so you can decide with confidence.",
+          "faqA3": "Yes. Identity and business details are checked before a professional appears in results. From there you compare the quotes that come back and decide, and you are never obliged to accept any of them.",
           "faqQ4": "How do I prepare the space for the work?",
           "faqA4": "Remove valuable and fragile items, make sure there's access to water and power, and agree on scheduling and waste removal with the professional. A good professional will give you a clear plan of work and a time estimate before starting."
         }
       },
       "electrical": {
         "podgorica": {
-          "intro": "Electrical work calls for qualified and reliable professionals — from small repairs to complete installations. Glatko connects you with verified electrical professionals in Podgorica and the surrounding area for safe work of any size. Compare quotes, check ratings, and choose the professional that fits your needs and budget.",
+          "intro": "Electrical work calls for qualified and reliable professionals — from small repairs to complete installations. Glatko connects you with verified electrical professionals in Podgorica and the surrounding area for safe work of any size. Compare the quotes that come back and choose the professional that fits your needs and budget.",
           "included1": "Socket and switch installation",
           "included2": "Distribution panel replacement",
           "included3": "Lighting installation",
@@ -2507,7 +2503,7 @@
       },
       "kitchen-bathroom": {
         "podgorica": {
-          "intro": "A complete kitchen or bathroom renovation is one of the most effective ways to upgrade a home. Glatko connects you with verified professionals in Podgorica and the surrounding area who handle everything from tiling and waterproofing to installing fixtures and furniture. Compare quotes, check ratings, and choose the professional that fits your budget and timeline.",
+          "intro": "A complete kitchen or bathroom renovation is one of the most effective ways to upgrade a home. Glatko connects you with verified professionals in Podgorica and the surrounding area who handle everything from tiling and waterproofing to installing fixtures and furniture. Compare the quotes that come back and choose the professional that fits your budget and timeline.",
           "included1": "Complete bathroom renovation",
           "included2": "Complete kitchen renovation",
           "included3": "Tiling and waterproofing",
@@ -2530,9 +2526,9 @@
           "faqA4": "The choice of materials and finish level (tiles, fixtures, furniture), the amount of plumbing and electrical rework, and the condition of the existing space. Labour and finishing usually drive the biggest differences in price — not the tiles themselves."
         }
       },
-      "plumbing-renov": {
+      "plumbing": {
         "podgorica": {
-          "intro": "From a dripping faucet to a complete pipe replacement, plumbing work needs a fast and reliable response. Glatko connects you with verified plumbing professionals in Podgorica and the surrounding area. Compare quotes, check ratings, and choose the professional that fits your needs and timeline.",
+          "intro": "From a dripping faucet to a complete pipe replacement, plumbing work needs a fast and reliable response. Glatko connects you with verified plumbing professionals in Podgorica and the surrounding area. Compare the quotes that come back and choose the professional that fits your needs and timeline.",
           "included1": "Leak detection and repair",
           "included2": "Boiler installation and replacement",
           "included3": "Faucet and valve replacement",

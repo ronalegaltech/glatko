@@ -8,6 +8,7 @@ import { createClient, createAdminClient } from "@/supabase/server";
 import { normalizePhoneE164 } from "@/lib/phone/normalize";
 import { sendAdminProApplicationEmail } from "@/lib/email/pro-emails";
 import { glatkoCaptureException } from "@/lib/sentry/glatko-capture";
+import { toCitySlug } from "@/lib/glatko/cities";
 
 interface FormState {
   success: boolean;
@@ -188,7 +189,9 @@ export async function submitProfessionalApplication(
     business_name: parsed.data.businessName,
     bio: parsed.data.bio ?? null,
     phone: phoneResult.e164,
-    location_city: parsed.data.city,
+    // The signup form posts the display NAME while other surfaces post the slug
+    // or the i18n key; the column and the city-scoped RPCs group on the slug.
+    location_city: toCitySlug(parsed.data.city),
     languages: languages.length > 0 ? languages : ["en"],
     years_experience: parsed.data.yearsExperience ?? null,
     hourly_rate_min: parsed.data.hourlyRateMin ?? null,
