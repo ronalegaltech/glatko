@@ -148,8 +148,11 @@ export const PRICING_DATA: Record<string, ServiceCityPricing> = {
     ],
     lastUpdated: "2026-06-09",
   },
-  "plumbing-renov:podgorica": {
-    categorySlug: "plumbing-renov",
+  // Keyed to `plumbing` since migration 119 merged `plumbing-renov` into it.
+  // The ranges and lastUpdated are unchanged — only the key moved, so the cost
+  // guide keeps rendering on the surviving URL instead of the retired one.
+  "plumbing:podgorica": {
+    categorySlug: "plumbing",
     citySlug: "podgorica",
     typical: {
       min: 10,
