@@ -1,0 +1,29 @@
+{
+  "id": "46c24556-946e-4a3b-a928-06beeaf1bdfc",
+  "faqs": [],
+  "icon": null,
+  "name": {
+    "ar": "نقل المكاتب",
+    "de": "Büroumzug",
+    "en": "Office moving",
+    "it": "Trasloco ufficio",
+    "me": "Selidba kancelarije",
+    "ru": "Офисный переезд",
+    "sr": "Selidba kancelarije",
+    "tr": "Ofis taşıma",
+    "uk": "Переїзд офісу"
+  },
+  "slug": "office-moving-mt",
+  "is_p0": false,
+  "seasonal": null,
+  "is_active": true,
+  "parent_id": "4f2a65bb-7132-442a-b27e-fa96a112c16d",
+  "created_at": "2026-05-02T22:12:07.905351+00:00",
+  "sort_order": 10,
+  "description": null,
+  "search_text": "selidba kancelarije selidba kancelarije office moving ofis tasima buroumzug trasloco ufficio офисный переезд نقل المكاتب переїзд офісу         ",
+  "active_months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "badge_priority": 99,
+  "hero_image_url": null,
+  "translation_status": {}
+}
