@@ -83,7 +83,9 @@ export default async function FoundingProviderLandingPage({ params }: PageProps)
   ];
 
   const eligibilityItems = [
-    t("eligibility.boka"),
+    // renamed from `eligibility.boka`: the rule is not about Boka Bay. Of the 35
+    // providers flagged is_founding_provider in production, 27 are outside it.
+    t("eligibility.location"),
     t("eligibility.verified"),
     t("eligibility.portfolio"),
     t("eligibility.experience"),

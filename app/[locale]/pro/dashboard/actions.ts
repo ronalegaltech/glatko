@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/supabase/server";
+import { toCitySlug } from "@/lib/glatko/cities";
 import {
   getProAnalytics,
   getProfileCompleteness,
@@ -110,7 +111,13 @@ export async function updateProfileAction(
   }>
 ) {
   const id = await requireProId();
-  return updateProfessionalProfile(id, updates);
+  // Normalised here rather than in the form: ProfileForm posts the display NAME
+  // while other surfaces post the slug, and location_city is grouped on by the
+  // city-scoped RPCs. Doing it in the action covers every caller.
+  const normalised = updates.location_city
+    ? { ...updates, location_city: toCitySlug(updates.location_city) }
+    : updates;
+  return updateProfessionalProfile(id, normalised);
 }
 
 export async function getProfileAction() {

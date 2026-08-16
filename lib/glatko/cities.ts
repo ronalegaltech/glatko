@@ -93,3 +93,36 @@ export function getCityNameBySlug(slug: string): string | undefined {
 export function isGlatkoCity(value: string): boolean {
   return getCityByName(value) !== undefined;
 }
+
+/**
+ * Normalise any of the three shapes a form might post — slug, i18n key, or
+ * display name — to the canonical SLUG, which is what `location_city` and the
+ * city-scoped RPCs group on.
+ *
+ * This exists because the forms genuinely disagree: OnboardingForm and
+ * ProfileForm post `c.name`, the health directory posts `c.slug`, and at least
+ * one path has posted `c.key`. Production ended up with `"Budva"` (a name) and
+ * `"hercegNovi"` (a key) sitting alongside `budva` and `herceg-novi`, and
+ * because glatko_liquid_combinations groups by the raw column, one city's
+ * providers were counted as two — which is a publishing-threshold bug, not a
+ * cosmetic one. Migration 120 repairs the rows; this keeps new ones out.
+ *
+ * Unknown values (the free-text "other" city) are lower-cased and hyphenated
+ * rather than rejected, because the column is deliberately free text.
+ */
+export function toCitySlug(value: string): string {
+  const raw = value.trim();
+  if (!raw) return "";
+  const known =
+    getCityBySlug(raw) ??
+    getCityByKey(raw) ??
+    getCityByName(raw) ??
+    GLATKO_CITIES.find(
+      (c) =>
+        c.slug.toLowerCase() === raw.toLowerCase() ||
+        c.key.toLowerCase() === raw.toLowerCase() ||
+        c.name.toLowerCase() === raw.toLowerCase(),
+    );
+  if (known) return known.slug;
+  return raw.toLowerCase().replace(/\s+/g, "-");
+}

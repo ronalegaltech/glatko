@@ -1691,7 +1691,7 @@
   "services": {
     "title": "Unsere Dienstleistungen",
     "subtitle": "Wählen Sie die passende Kategorie",
-    "metaDescription": "Finden Sie auf Glatko geprüfte Fachleute für {name} in ganz Montenegro. Angebote vergleichen, Bewertungen prüfen und schnell buchen – gratis anfragen.",
+    "metaDescription": "Finden Sie auf Glatko geprüfte Fachleute für {name} in ganz Montenegro. Angebote vergleichen und schnell buchen – gratis anfragen.",
     "viewAllPros": "Alle Fachleute anzeigen",
     "requestInCategory": "Dienstleistung in dieser Kategorie anfordern",
     "subcategories": "Unterkategorien",
@@ -1700,7 +1700,7 @@
   },
   "seo": {
     "providersTitle": "Fachleute — Glatko",
-    "providersDesc": "Entdecken Sie auf Glatko geprüfte, vertrauenswürdige Fachleute in ganz Montenegro. Profile, Bewertungen und Referenzen ansehen, kostenlos Angebote anfragen.",
+    "providersDesc": "Entdecken Sie auf Glatko geprüfte, vertrauenswürdige Fachleute in ganz Montenegro. Geprüfte Profile ansehen, kostenlos Angebote anfragen.",
     "landingTitle": "Glatko — Montenegros Premium-Serviceplattform",
     "homeTitle": "Montenegros Premium-Serviceplattform",
     "landingDesc": "Finden Sie auf Glatko geprüfte Fachleute in ganz Montenegro für jeden Service rund um Haushalt und Betrieb. Anfrage kostenlos stellen, Angebote vergleichen.",
@@ -1853,9 +1853,9 @@
     "faq": {
       "title": "Häufig gestellte Fragen",
       "q1": "Wie werden die Fachleute auf Glatko überprüft?",
-      "a1": "Jede Fachkraft wird geprüft, bevor sie auf Glatko Dienstleistungen anbieten darf. Wir kontrollieren Identität und Geschäftsangaben, und unsere ersten Fachleute werden persönlich geprüft. Bewertungen und Rezensionen stammen ausschließlich aus echten, abgeschlossenen Aufträgen, sodass das Feedback, das Sie sehen, tatsächliche Arbeit widerspiegelt und nicht anonyme Anmeldungen.",
+      "a1": "Jede Fachkraft wird geprüft, bevor sie auf Glatko Dienstleistungen anbieten darf. Wir kontrollieren Identität und Geschäftsangaben, und unsere ersten Fachleute werden persönlich geprüft.",
       "q2": "Wie wähle ich zwischen den Fachleuten aus?",
-      "a2": "Wenn Sie eine Anfrage einstellen, senden Ihnen mehrere Fachleute ihre Angebote. Sie können Preise, Profile, Bewertungen und abgeschlossene Aufträge vergleichen und dann die Fachkraft auswählen, die am besten zu Ihnen passt. Da die Fachleute um Ihren Auftrag konkurrieren, bleibt die Entscheidung in Ihren Händen, und Sie sind niemals verpflichtet, ein Angebot anzunehmen.",
+      "a2": "Wenn Sie eine Anfrage einstellen, senden Ihnen mehrere Fachleute ihre Angebote. Sie können Preise und Profile vergleichen und dann die Fachkraft auswählen, die am besten zu Ihnen passt. Da die Fachleute um Ihren Auftrag konkurrieren, bleibt die Entscheidung in Ihren Händen, und Sie sind niemals verpflichtet, ein Angebot anzunehmen.",
       "q3": "Ist die Nutzung von Glatko kostenlos?",
       "a3": "Ja. Das Einstellen einer Anfrage und das Empfangen von Angeboten ist für Kundinnen und Kunden vollständig kostenlos. Sie bezahlen nur die Fachkraft, für die Sie sich entscheiden, zu dem Preis, den Sie direkt mit ihr vereinbaren. Glatko erhebt keine zusätzliche Gebühr auf den Preis der Fachkraft.",
       "q4": "Wie viel berechnen die Fachleute?",
@@ -2084,7 +2084,7 @@
     "pro": {
       "hero": {
         "eyebrow": "Founding-Profi-Programm",
-        "title": "Werden Sie einer der ersten 50 Profis in der Bucht von Kotor",
+        "title": "Werden Sie einer der ersten 50 Profis in Montenegro",
         "subtitle": "Lebenslanges Founding-Abzeichen, 3 Monate kostenlose Featured-Platzierung in Jahr 2 und die Chance, die Plattform mitzugestalten.",
         "cta": "Jetzt bewerben",
         "secondaryCta": "So funktioniert's"
@@ -2101,13 +2101,13 @@
         },
         "firstClient": {
           "title": "First-Mover-Vorteil",
-          "desc": "Erreichen Sie Kunden, bevor Mitbewerber kommen. Bauen Sie Ihre Bewertungshistorie früh auf."
+          "desc": "Erreichen Sie Kunden in ganz Montenegro, bevor Mitbewerber kommen."
         }
       },
       "eligibility": {
         "title": "Wer kann sich bewerben",
-        "subtitle": "Soft-Launch ist auf die Bucht von Kotor fokussiert — Qualität vor Quantität.",
-        "boka": "Tätig in Budva, Kotor oder Tivat",
+        "subtitle": "Qualität vor Quantität im ersten Jahr.",
+        "location": "Tätig irgendwo in Montenegro",
         "verified": "Bereit zur Identitäts- und Geschäftsverifizierung",
         "portfolio": "Mindestens 3 Portfolio-Beispiele und ein Firmendokument",
         "experience": "2+ Jahre Berufserfahrung in Ihrer Kategorie"
@@ -2117,7 +2117,7 @@
         "t1": {
           "date": "Mai 2026",
           "title": "Öffentlicher Soft-Launch",
-          "desc": "Glatko öffnet für die Bucht von Kotor. Die ersten 50 freigegebenen Profis werden Founding-Profis."
+          "desc": "Glatko öffnet in ganz Montenegro. Die ersten 50 freigegebenen Profis werden Founding-Profis."
         },
         "t2": {
           "date": "Aug 2026",
@@ -2150,8 +2150,8 @@
           "answer": "Nein. Glatko ist während des Soft-Launches für Kunden und Profis kostenlos."
         },
         "q4": {
-          "question": "Was, wenn ich nicht in der Bucht bin?",
-          "answer": "Wir expandieren 2026 in weitere montenegrinische Städte. Sie können sich registrieren — wir melden uns, sobald Ihre Region öffnet."
+          "question": "Spielt meine Stadt eine Rolle?",
+          "answer": "Nein. Founding-Profis wurden in ganz Montenegro freigegeben — Podgorica, Budva, Bar, Kotor, Tivat, Herceg Novi, Nikšić und Berane. Bewerben Sie sich von dort, wo Sie arbeiten."
         },
         "q5": {
           "question": "Wie lange dauert die Verifizierung?",
@@ -2171,30 +2171,26 @@
     "customer": {
       "hero": {
         "eyebrow": "Founding-Kunden-Programm",
-        "title": "Werden Sie einer der ersten 100 Kunden und erhalten 5 Gratis-Credits",
-        "subtitle": "Founding-Kunden-Abzeichen, 5 Gratis-Credits und Priority-Support — als Dank für Ihre frühe Teilnahme.",
+        "title": "Werden Sie einer der ersten 100 Kunden von Glatko",
+        "subtitle": "Founding-Kunden-Abzeichen und Priority-Support — als Dank für Ihre frühe Teilnahme.",
         "cta": "Erste Anfrage senden"
       },
       "benefits": {
         "title": "Ihre Vorteile",
         "b1": {
           "title": "Founding-Kunden-Abzeichen",
-          "desc": "Lila Abzeichen in Bewertungen und Chats — Profis nehmen Sie ab Tag 1 ernst."
-        },
-        "b2": {
-          "title": "5 Gratis-Anfrage-Credits",
-          "desc": "Frei verwendbar in allen Kategorien — kein Verfallsdatum, keine Bedingungen."
+          "desc": "Lila Abzeichen an Ihrem Chat-Namen — Profis nehmen Sie ab Tag 1 ernst."
         },
         "b3": {
           "title": "Priority-Support + Empfehlungen",
-          "desc": "Direkter Draht zu unserem Team und Bonus-Credits für jede geworbene Person."
+          "desc": "Direkter Draht zu unserem Team bei allen Fragen."
         }
       },
       "howToBecome": {
         "title": "So werden Sie Founding-Kunde",
         "step1": "Kostenloses Konto auf Glatko erstellen (~30 Sekunden).",
-        "step2": "Erste Anfrage senden — beliebige Kategorie, beliebige Stadt in der Bucht.",
-        "step3": "Wenn Sie unter den ersten 100 sind, erhalten Sie Abzeichen + Credits automatisch."
+        "step2": "Erste Anfrage senden — beliebige Kategorie, beliebige Stadt in Montenegro.",
+        "step3": "Wenn Sie unter den ersten 100 sind, erhalten Sie das Abzeichen automatisch."
       },
       "cta": {
         "title": "Erste Anfrage senden",
@@ -2456,7 +2452,7 @@
     "content": {
       "renovation-construction": {
         "podgorica": {
-          "intro": "Die Renovierung einer Wohnung oder eines Geschäftsraums in Podgorica erfordert zuverlässige Fachleute und eine klare Kosteneinschätzung. Glatko verbindet Sie mit geprüften Fachleuten in Podgorica und Umgebung — von der Komplettrenovierung einer Wohnung bis zu einzelnen Reparaturen. Vergleichen Sie Angebote, prüfen Sie Bewertungen und wählen Sie die Fachkraft, die zu Ihrem Budget und Zeitplan passt.",
+          "intro": "Die Renovierung einer Wohnung oder eines Geschäftsraums in Podgorica erfordert zuverlässige Fachleute und eine klare Kosteneinschätzung. Glatko verbindet Sie mit geprüften Fachleuten in Podgorica und Umgebung — von der Komplettrenovierung einer Wohnung bis zu einzelnen Reparaturen. Vergleichen Sie die eingehenden Angebote und wählen Sie die Fachkraft, die zu Ihrem Budget und Zeitplan passt.",
           "included1": "Komplettrenovierung von Wohnungen und Häusern",
           "included2": "Renovierung von Bad und Küche",
           "included3": "Elektroinstallationen",
@@ -2475,14 +2471,14 @@
           "faqQ2": "Wie lange dauert eine typische Renovierung?",
           "faqA2": "Kleinere Arbeiten und kosmetische Ausbesserungen sind meist in wenigen Tagen erledigt. Eine Badrenovierung dauert etwa ein bis zwei Wochen, die Komplettrenovierung einer mittelgroßen Wohnung je nach Komplexität vier bis acht Wochen.",
           "faqQ3": "Sind die Fachleute auf Glatko geprüft?",
-          "faqA3": "Ja. Fachleute werden geprüft, bevor sie in den Ergebnissen erscheinen. Auf jedem Profil sehen Sie Bewertungen, die Anzahl der Rezensionen und frühere Arbeiten, damit Sie sich mit gutem Gefühl entscheiden können.",
+          "faqA3": "Ja. Identität und Geschäftsangaben werden geprüft, bevor eine Fachkraft in den Ergebnissen erscheint. Danach vergleichen Sie die eingehenden Angebote und entscheiden selbst — Sie müssen kein Angebot annehmen.",
           "faqQ4": "Wie bereite ich die Räume auf die Arbeiten vor?",
           "faqA4": "Entfernen Sie wertvolle und zerbrechliche Gegenstände, stellen Sie den Zugang zu Wasser und Strom sicher und klären Sie Termine und Schuttentsorgung mit der Fachkraft. Eine gute Fachkraft gibt Ihnen vor Beginn einen klaren Arbeitsplan und eine Zeiteinschätzung."
         }
       },
       "electrical": {
         "podgorica": {
-          "intro": "Elektroarbeiten erfordern qualifizierte und zuverlässige Fachleute — von kleinen Reparaturen bis zu kompletten Installationen. Glatko verbindet Sie mit geprüften Fachleuten für Elektroarbeiten in Podgorica und Umgebung — für sichere Arbeiten jeder Größenordnung. Vergleichen Sie Angebote, prüfen Sie Bewertungen und wählen Sie die Fachkraft, die zu Ihren Anforderungen und Ihrem Budget passt.",
+          "intro": "Elektroarbeiten erfordern qualifizierte und zuverlässige Fachleute — von kleinen Reparaturen bis zu kompletten Installationen. Glatko verbindet Sie mit geprüften Fachleuten für Elektroarbeiten in Podgorica und Umgebung — für sichere Arbeiten jeder Größenordnung. Vergleichen Sie die eingehenden Angebote und wählen Sie die Fachkraft, die zu Ihren Anforderungen und Ihrem Budget passt.",
           "included1": "Montage von Steckdosen und Schaltern",
           "included2": "Austausch des Verteilerkastens",
           "included3": "Montage von Beleuchtung",
@@ -2507,7 +2503,7 @@
       },
       "kitchen-bathroom": {
         "podgorica": {
-          "intro": "Eine komplette Küchen- oder Badrenovierung ist eine der wirkungsvollsten Möglichkeiten, ein Zuhause aufzuwerten. Glatko verbindet Sie mit geprüften Fachleuten in Podgorica und Umgebung, die alles übernehmen — von Fliesenarbeiten und Abdichtung bis zur Montage von Sanitärobjekten und Möbeln. Vergleichen Sie Angebote, prüfen Sie Bewertungen und wählen Sie die Fachkraft, die zu Ihrem Budget und Zeitplan passt.",
+          "intro": "Eine komplette Küchen- oder Badrenovierung ist eine der wirkungsvollsten Möglichkeiten, ein Zuhause aufzuwerten. Glatko verbindet Sie mit geprüften Fachleuten in Podgorica und Umgebung, die alles übernehmen — von Fliesenarbeiten und Abdichtung bis zur Montage von Sanitärobjekten und Möbeln. Vergleichen Sie die eingehenden Angebote und wählen Sie die Fachkraft, die zu Ihrem Budget und Zeitplan passt.",
           "included1": "Komplette Badrenovierung",
           "included2": "Komplette Küchenrenovierung",
           "included3": "Fliesenarbeiten und Abdichtung",
@@ -2532,7 +2528,7 @@
       },
       "plumbing": {
         "podgorica": {
-          "intro": "Vom tropfenden Wasserhahn bis zum kompletten Rohraustausch — Sanitärarbeiten erfordern eine schnelle und zuverlässige Lösung. Glatko verbindet Sie mit geprüften Fachleuten für Sanitärarbeiten in Podgorica und Umgebung. Vergleichen Sie Angebote, prüfen Sie Bewertungen und wählen Sie die Fachkraft, die zu Ihren Anforderungen und Ihrem Zeitplan passt.",
+          "intro": "Vom tropfenden Wasserhahn bis zum kompletten Rohraustausch — Sanitärarbeiten erfordern eine schnelle und zuverlässige Lösung. Glatko verbindet Sie mit geprüften Fachleuten für Sanitärarbeiten in Podgorica und Umgebung. Vergleichen Sie die eingehenden Angebote und wählen Sie die Fachkraft, die zu Ihren Anforderungen und Ihrem Zeitplan passt.",
           "included1": "Ortung und Reparatur von Lecks",
           "included2": "Montage und Austausch von Boilern",
           "included3": "Austausch von Wasserhähnen und Ventilen",

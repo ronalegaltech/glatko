@@ -1700,7 +1700,7 @@
   },
   "seo": {
     "providersTitle": "Profesyoneller — Glatko",
-    "providersDesc": "Karadağ genelinde Glatko'daki doğrulanmış, güvenilir profesyonelleri keşfedin. Profilleri, puanları ve tamamlanan işleri inceleyip ücretsiz teklif isteyin.",
+    "providersDesc": "Karadağ genelinde Glatko'daki doğrulanmış, güvenilir profesyonelleri keşfedin. Doğrulanmış profilleri inceleyip ücretsiz teklif isteyin.",
     "landingTitle": "Glatko — Karadağ'ın Premium Hizmet Platformu",
     "homeTitle": "Karadağ'ın Premium Hizmet Platformu",
     "landingDesc": "Karadağ'da her türlü ev veya işyeri hizmeti için doğrulanmış profesyonelleri bulun. Glatko'da ücretsiz talep oluşturun, güvenilir yerel uzmanlardan teklif alın.",
@@ -1853,9 +1853,9 @@
     "faq": {
       "title": "Sıkça Sorulan Sorular",
       "q1": "Glatko profesyonelleri nasıl doğrulanıyor?",
-      "a1": "Her profesyonel, Glatko üzerinde hizmet sunabilmeden önce inceleniyor. Kimlik ve işletme bilgilerini kontrol ediyoruz; kurucu profesyonellerimiz ise bizzat değerlendiriliyor. Puanlar ve yorumlar yalnızca gerçek ve tamamlanmış işlerden geliyor; böylece gördüğünüz geri bildirimler anonim kayıtları değil, gerçek işleri yansıtıyor.",
+      "a1": "Her profesyonel, Glatko üzerinde hizmet sunabilmeden önce inceleniyor. Kimlik ve işletme bilgilerini kontrol ediyoruz; kurucu profesyonellerimiz ise bizzat değerlendiriliyor.",
       "q2": "Profesyoneller arasında nasıl seçim yaparım?",
-      "a2": "Bir talep oluşturduğunuzda birden fazla profesyonel size teklif gönderir. Fiyatlarını, profillerini, puanlarını ve tamamladıkları işleri karşılaştırıp size en uygun olanı seçebilirsiniz. Profesyoneller işiniz için birbirleriyle rekabet ettiğinden karar tamamen sizde kalır ve hiçbir teklifi kabul etmek zorunda değilsiniz.",
+      "a2": "Bir talep oluşturduğunuzda birden fazla profesyonel size teklif gönderir. Fiyatlarını ve profillerini karşılaştırıp size en uygun olanı seçebilirsiniz. Profesyoneller işiniz için birbirleriyle rekabet ettiğinden karar tamamen sizde kalır ve hiçbir teklifi kabul etmek zorunda değilsiniz.",
       "q3": "Glatko'yu kullanmak ücretsiz mi?",
       "a3": "Evet. Talep oluşturmak ve teklif almak müşteriler için tamamen ücretsizdir. Yalnızca seçtiğiniz profesyonele, doğrudan onunla anlaştığınız fiyat üzerinden ödeme yaparsınız. Glatko, profesyonelin fiyatının üzerine herhangi bir ek ücret eklemez.",
       "q4": "Profesyoneller ne kadar ücret alıyor?",
@@ -2087,7 +2087,7 @@
     "pro": {
       "hero": {
         "eyebrow": "Kurucu Profesyonel Programı",
-        "title": "Glatko'nun Boka Bay'deki ilk 50 güvenilir profesyonelinden biri ol",
+        "title": "Glatko'nun Karadağ'daki ilk 50 güvenilir profesyonelinden biri ol",
         "subtitle": "Ömür boyu Kurucu rozeti, 2. yılda 3 ay ücretsiz öne çıkarma ve platformu şekillendirme şansı.",
         "cta": "Hemen başvur",
         "secondaryCta": "Nasıl çalışır"
@@ -2104,13 +2104,13 @@
         },
         "firstClient": {
           "title": "İlk hareket avantajı",
-          "desc": "Rakipler gelmeden Boka Bay müşterilerine ulaş. Yorum geçmişini erken oluştur."
+          "desc": "Rakipler gelmeden Karadağ genelindeki müşterilere ulaş."
         }
       },
       "eligibility": {
         "title": "Kimler başvurabilir",
-        "subtitle": "Soft launch Boka Bay odaklı — 1. yılda kalite önceliğimiz.",
-        "boka": "Budva, Kotor veya Tivat'ta hizmet veriyor olmak",
+        "subtitle": "1. yılda kalite önceliğimiz.",
+        "location": "Karadağ'ın herhangi bir yerinde hizmet veriyor olmak",
         "verified": "Kimlik + işletme doğrulamasını tamamlamayı kabul etmek",
         "portfolio": "En az 3 portfolyo örneği ve bir şirket belgesi",
         "experience": "Kategorinde en az 2 yıl profesyonel deneyim"
@@ -2120,7 +2120,7 @@
         "t1": {
           "date": "Mayıs 2026",
           "title": "Açık soft launch",
-          "desc": "Glatko Boka Bay için açıldı. İlk 50 onaylı pro Kurucu Profesyonel oluyor."
+          "desc": "Glatko Karadağ genelinde açıldı. İlk 50 onaylı pro Kurucu Profesyonel oluyor."
         },
         "t2": {
           "date": "Ağu 2026",
@@ -2153,8 +2153,8 @@
           "answer": "Hayır. Soft-launch boyunca Glatko hem müşteri hem pro için ücretsiz."
         },
         "q4": {
-          "question": "Boka Bay dışındaysam?",
-          "answer": "2026 boyunca diğer Karadağ şehirlerine genişleyeceğiz. Şimdiden kayıt olabilir, bölgen açıldığında haber alırsın."
+          "question": "Şehrim önemli mi?",
+          "answer": "Hayır. Kurucu profesyoneller Karadağ genelinde onaylandı — Podgorica, Budva, Bar, Kotor, Tivat, Herceg Novi, Nikšić ve Berane. Nerede çalışıyorsan oradan başvur."
         },
         "q5": {
           "question": "Doğrulama ne kadar sürer?",
@@ -2174,30 +2174,26 @@
     "customer": {
       "hero": {
         "eyebrow": "Kurucu Müşteri Programı",
-        "title": "Glatko'nun ilk 100 müşterisinden biri ol, 5 ücretsiz kredi al",
-        "subtitle": "Kurucu Müşteri rozeti, 5 ücretsiz talep kredisi ve öncelikli destek — ilk dalgada olmanın karşılığı.",
+        "title": "Glatko'nun ilk 100 müşterisinden biri ol",
+        "subtitle": "Kurucu Müşteri rozeti ve öncelikli destek — ilk dalgada olmanın karşılığı.",
         "cta": "İlk talebini gönder"
       },
       "benefits": {
         "title": "Senin için neler var",
         "b1": {
           "title": "Kurucu Müşteri rozeti",
-          "desc": "Yorumlarında ve sohbet adında mor rozet — pro'lar seni ilk günden ciddiye alır."
-        },
-        "b2": {
-          "title": "5 ücretsiz talep kredisi",
-          "desc": "Tüm kategorilerde istediğinde kullan — son kullanma yok, koşul yok."
+          "desc": "Sohbet adının yanında mor rozet — profesyoneller seni ilk günden ciddiye alır."
         },
         "b3": {
           "title": "Öncelikli destek + referral",
-          "desc": "Her sorun için ekibimize doğrudan ulaş, arkadaş davet ettiğinde ekstra kredi kazan."
+          "desc": "Her sorun için ekibimize doğrudan ulaş."
         }
       },
       "howToBecome": {
         "title": "Kurucu Müşteri nasıl olunur",
         "step1": "Glatko'da ücretsiz hesap oluştur (~30 saniye).",
-        "step2": "İlk hizmet talebini gönder — Boka Bay'de herhangi bir kategori, herhangi bir şehir.",
-        "step3": "İlk 100 kişi arasındaysan rozet ve 5 kredi otomatik olarak hesabına eklenir."
+        "step2": "İlk hizmet talebini gönder — Karadağ'da herhangi bir kategori, herhangi bir şehir.",
+        "step3": "İlk 100 kişi arasındaysan rozet otomatik olarak eklenir."
       },
       "cta": {
         "title": "İlk talebini gönder",
@@ -2456,7 +2452,7 @@
     "content": {
       "renovation-construction": {
         "podgorica": {
-          "intro": "Podgorica içinde bir evi veya iş yerini yenilemek, güvenilir profesyoneller ve net bir maliyet öngörüsü gerektirir. Glatko, sizi Podgorica ve çevresindeki doğrulanmış profesyonellerle buluşturur — komple daire tadilatından tekil onarımlara kadar. Teklifleri karşılaştırın, puanları inceleyin; bütçenize ve zaman planınıza uygun profesyoneli seçin.",
+          "intro": "Podgorica içinde bir evi veya iş yerini yenilemek, güvenilir profesyoneller ve net bir maliyet öngörüsü gerektirir. Glatko, sizi Podgorica ve çevresindeki doğrulanmış profesyonellerle buluşturur — komple daire tadilatından tekil onarımlara kadar. Gelen teklifleri karşılaştırın; bütçenize ve zaman planınıza uygun profesyoneli seçin.",
           "included1": "Komple daire ve ev tadilatı",
           "included2": "Banyo ve mutfak yenileme",
           "included3": "Elektrik tesisatı",
@@ -2475,14 +2471,14 @@
           "faqQ2": "Ortalama bir tadilat ne kadar sürer?",
           "faqA2": "Küçük işler ve kozmetik düzeltmeler genellikle birkaç günde tamamlanır. Banyo yenileme yaklaşık bir ila iki hafta sürer; orta büyüklükteki bir dairenin komple tadilatı ise karmaşıklığa bağlı olarak dört ila sekiz hafta arasında değişir.",
           "faqQ3": "Glatko üzerindeki profesyoneller doğrulanmış mı?",
-          "faqA3": "Evet. Profesyoneller, sonuçlarda görünmeden önce kontrolden geçer. Her profilde puanları, yorum sayısını ve önceki işleri görebilir, kararınızı güvenle verebilirsiniz.",
+          "faqA3": "Evet. Bir profesyonel sonuçlarda görünmeden önce kimlik ve işletme bilgileri kontrol edilir. Sonrasında gelen teklifleri karşılaştırıp kendiniz karar verirsiniz; hiçbirini kabul etmek zorunda değilsiniz.",
           "faqQ4": "Çalışma öncesinde alanı nasıl hazırlamalıyım?",
           "faqA4": "Değerli ve kırılgan eşyaları kaldırın, suya ve elektriğe erişim olduğundan emin olun; zaman planını ve atıkların taşınmasını profesyonelle önceden konuşun. İyi bir profesyonel, işe başlamadan önce size net bir iş planı ve süre tahmini verir."
         }
       },
       "electrical": {
         "podgorica": {
-          "intro": "Elektrik işleri, küçük onarımlardan komple tesisat yenilemeye kadar nitelikli ve güvenilir profesyoneller gerektirir. Glatko, her ölçekteki işin güvenle yapılması için sizi Podgorica ve çevresindeki doğrulanmış elektrik profesyonelleriyle buluşturur. Teklifleri karşılaştırın, puanları inceleyin; ihtiyaçlarınıza ve bütçenize uygun profesyoneli seçin.",
+          "intro": "Elektrik işleri, küçük onarımlardan komple tesisat yenilemeye kadar nitelikli ve güvenilir profesyoneller gerektirir. Glatko, her ölçekteki işin güvenle yapılması için sizi Podgorica ve çevresindeki doğrulanmış elektrik profesyonelleriyle buluşturur. Gelen teklifleri karşılaştırın; ihtiyaçlarınıza ve bütçenize uygun profesyoneli seçin.",
           "included1": "Priz ve anahtar montajı",
           "included2": "Elektrik panosu değişimi",
           "included3": "Aydınlatma montajı",
@@ -2507,7 +2503,7 @@
       },
       "kitchen-bathroom": {
         "podgorica": {
-          "intro": "Mutfağın veya banyonun komple yenilenmesi, bir evi iyileştirmenin en etkili yollarından biridir. Glatko, fayans döşeme ve su yalıtımından vitrifiye ve mobilya montajına kadar her işi üstlenen, Podgorica ve çevresindeki doğrulanmış profesyonellerle sizi buluşturur. Teklifleri karşılaştırın, puanları inceleyin; bütçenize ve zaman planınıza uygun profesyoneli seçin.",
+          "intro": "Mutfağın veya banyonun komple yenilenmesi, bir evi iyileştirmenin en etkili yollarından biridir. Glatko, fayans döşeme ve su yalıtımından vitrifiye ve mobilya montajına kadar her işi üstlenen, Podgorica ve çevresindeki doğrulanmış profesyonellerle sizi buluşturur. Gelen teklifleri karşılaştırın; bütçenize ve zaman planınıza uygun profesyoneli seçin.",
           "included1": "Komple banyo yenileme",
           "included2": "Komple mutfak yenileme",
           "included3": "Fayans döşeme ve su yalıtımı",
@@ -2532,7 +2528,7 @@
       },
       "plumbing": {
         "podgorica": {
-          "intro": "Damlayan bir musluktan komple boru değişimine kadar su tesisatı işleri hızlı ve güvenilir bir çözüm gerektirir. Glatko, sizi Podgorica ve çevresindeki doğrulanmış su tesisatı profesyonelleriyle buluşturur. Teklifleri karşılaştırın, puanları inceleyin; ihtiyaçlarınıza ve zaman planınıza uygun profesyoneli seçin.",
+          "intro": "Damlayan bir musluktan komple boru değişimine kadar su tesisatı işleri hızlı ve güvenilir bir çözüm gerektirir. Glatko, sizi Podgorica ve çevresindeki doğrulanmış su tesisatı profesyonelleriyle buluşturur. Gelen teklifleri karşılaştırın; ihtiyaçlarınıza ve zaman planınıza uygun profesyoneli seçin.",
           "included1": "Su kaçağı tespiti ve onarımı",
           "included2": "Termosifon montajı ve değişimi",
           "included3": "Musluk ve vana değişimi",
