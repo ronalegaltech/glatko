@@ -37,6 +37,7 @@ import { StepDetails } from "./StepDetails";
 import { StepLocation } from "./StepLocation";
 import { StepPhotos } from "./StepPhotos";
 import { RequestConfirmation } from "./RequestConfirmation";
+import { flattenSubcategories } from "@/lib/glatko/categories";
 import type { ServiceCategory } from "@/types/glatko";
 import type { Locale } from "@/i18n/routing";
 
@@ -280,7 +281,12 @@ function RequestServiceWizardInner({ categories, userId }: Props) {
   const selectedParent = parents.find((p) => p.id === selectedMainId);
   const parentSlug = selectedParent?.slug ?? "";
 
-  const allChildren = categories.filter((c) => c.parent_id !== null);
+  // `getServiceCategories()` returns ROOTS ONLY, with each root's subcategories
+  // nested under `children` — it is not a flat list. Filtering on `parent_id`
+  // therefore matched nothing and left `selectedSub` permanently undefined,
+  // which silently emptied StepDetails (no `selectedSubSlug` → no questions
+  // RPC) and blanked `autoTitle`. StepCategory already reads `.children`.
+  const allChildren = flattenSubcategories(categories);
   const selectedSub = allChildren.find((c) => c.id === selectedSubId);
   const selectedSubSlug = selectedSub?.slug ?? "";
 
