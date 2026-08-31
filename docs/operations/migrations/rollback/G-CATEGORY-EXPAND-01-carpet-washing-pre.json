@@ -1,0 +1,39 @@
+{
+  "id": "7079885a-aded-4767-81e9-57f5f906bde7",
+  "faqs": [],
+  "icon": "Brush",
+  "name": {
+    "ar": "غسيل السجاد",
+    "de": "Teppichreinigung",
+    "en": "Carpet Washing",
+    "it": "Lavaggio tappeti",
+    "me": "Pranje tepiha",
+    "ru": "Стирка ковров",
+    "sr": "Прање тепиха",
+    "tr": "Halı Yıkama",
+    "uk": "Чищення килимів"
+  },
+  "slug": "carpet-washing",
+  "is_p0": true,
+  "seasonal": null,
+  "is_active": true,
+  "parent_id": "04bca9b1-8ed7-4e6b-9045-dc6ddceba819",
+  "created_at": "2026-04-30T09:25:16.793732+00:00",
+  "sort_order": 4,
+  "description": null,
+  "search_text": "pranje tepiha прање тепиха carpet washing hali yikama teppichreinigung lavaggio tappeti стирка ковров غسيل السجاد чищення килимів         ",
+  "active_months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "badge_priority": 99,
+  "hero_image_url": null,
+  "translation_status": {
+    "ar": "auto",
+    "de": "auto",
+    "en": "verified",
+    "it": "auto",
+    "me": "verified",
+    "ru": "auto",
+    "sr": "verified",
+    "tr": "verified",
+    "uk": "auto"
+  }
+}

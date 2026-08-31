@@ -1,0 +1,29 @@
+{
+  "id": "256afb71-5fab-4adc-b4b5-3e629e70b4ff",
+  "faqs": [],
+  "icon": null,
+  "name": {
+    "ar": "تركيب المكيفات",
+    "de": "Klimaanlagen-Installation",
+    "en": "AC installation",
+    "it": "Installazione climatizzatori",
+    "me": "Montaža klima uređaja",
+    "ru": "Установка кондиционеров",
+    "sr": "Montaža klima uređaja",
+    "tr": "Klima montaj",
+    "uk": "Встановлення кондиціонерів"
+  },
+  "slug": "ac-installation",
+  "is_p0": false,
+  "seasonal": null,
+  "is_active": true,
+  "parent_id": "43f0682e-90b4-4187-be46-eb296fe6b143",
+  "created_at": "2026-05-02T22:12:02.349296+00:00",
+  "sort_order": 13,
+  "description": null,
+  "search_text": "montaza klima uredaja montaza klima uredaja ac installation klima montaj klimaanlagen-installation installazione climatizzatori установка кондиционеров تركيب المكيفات встановлення кондиціонерів         ",
+  "active_months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "badge_priority": 99,
+  "hero_image_url": null,
+  "translation_status": {}
+}
