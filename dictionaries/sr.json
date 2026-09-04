@@ -228,6 +228,17 @@
     "viberSupport": "Viber Support"
   },
   "auth": {
+    "linkNotice": {
+      "title": "Link nije radio",
+      "expiredDesc": "Ovaj link je nevažeći ili mu je istekao rok. Linkovi za potvrdu mogu se iskoristiti samo jednom i posle nekog vremena prestaju da važe.",
+      "callbackDesc": "Nismo uspeli da završimo prijavu. Pokušajte ponovo.",
+      "resendCta": "Pošalji novi link za potvrdu",
+      "resendHint": "Unesite svoju imejl adresu ispod i poslaćemo vam novi link.",
+      "resendSent": "Novi link je poslat. Proverite svoje sanduče.",
+      "recoveryCta": "Zatraži novi link za resetovanje lozinke",
+      "errRateLimited": "Previše pokušaja. Pokušajte malo kasnije.",
+      "errGeneric": "Nismo uspeli da pošaljemo link. Ako je nalog već potvrđen, jednostavno se prijavite."
+    },
     "addEmail": {
       "title": "Dodaj rezervni email",
       "description": "Dodaj email i lozinku kao rezervni način prijave. I dalje možeš da se prijaviš SMS kodom.",

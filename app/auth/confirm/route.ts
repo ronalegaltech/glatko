@@ -16,6 +16,7 @@ import { mergeSessionCookieOptions } from "@/supabase/server";
 import { glatkoCaptureException } from "@/lib/sentry/glatko-capture";
 import { defaultLocale } from "@/i18n/routing";
 import { isSafeInternalPath } from "@/lib/auth/redirect";
+import { classifyConfirmFailure } from "@/lib/auth/confirm";
 
 // Mirrors the verifyOtp `type` parameter from @supabase/supabase-js.
 // Inlined here so we don't depend on the gotrue-js export surface.
@@ -39,8 +40,21 @@ const VALID_TYPES: ReadonlySet<EmailOtpType> = new Set<EmailOtpType>([
 // Shared open-redirect guard (also rejects backslash-prefixed paths).
 const isValidNext = isSafeInternalPath;
 
-function loginRedirect(origin: string, error: string): NextResponse {
-  return NextResponse.redirect(`${origin}/${defaultLocale}/login?error=${error}`);
+/**
+ * Bounce to login with a machine-readable reason. `flow` carries the verifyOtp
+ * type through so the login page can offer the right recovery — resend the
+ * signup confirmation, or send the user to /forgot-password — instead of
+ * dropping them on a bare form with no explanation.
+ */
+function loginRedirect(
+  origin: string,
+  error: string,
+  flow?: EmailOtpType,
+): NextResponse {
+  const target = new URL(`/${defaultLocale}/login`, origin);
+  target.searchParams.set("error", error);
+  if (flow) target.searchParams.set("flow", flow);
+  return NextResponse.redirect(target.toString());
 }
 
 export async function GET(request: NextRequest) {
@@ -87,11 +101,16 @@ export async function GET(request: NextRequest) {
   });
 
   if (error) {
-    glatkoCaptureException(error, {
-      module: "auth-confirm",
-      type,
-    });
-    return loginRedirect(origin, "auth-confirm-failed");
+    // Expired / already-redeemed links are routine (second click, stale link
+    // after a re-send, inbox scanner prefetch) — report them as `warning` so
+    // only genuine verify failures reach the error alert rule.
+    const kind = classifyConfirmFailure(error);
+    glatkoCaptureException(
+      error,
+      { module: "auth-confirm", type, kind },
+      kind === "expired-or-used" ? "warning" : "error",
+    );
+    return loginRedirect(origin, "auth-confirm-failed", type);
   }
 
   return response;
