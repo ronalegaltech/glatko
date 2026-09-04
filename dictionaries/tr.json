@@ -228,6 +228,17 @@
     "viberSupport": "Viber Destek"
   },
   "auth": {
+    "linkNotice": {
+      "title": "Bağlantı çalışmadı",
+      "expiredDesc": "Bu bağlantı geçersiz ya da süresi dolmuş. Onay bağlantıları yalnızca bir kez kullanılabilir ve bir süre sonra geçerliliğini yitirir.",
+      "callbackDesc": "Giriş tamamlanamadı. Lütfen tekrar dene.",
+      "resendCta": "Yeni onay bağlantısı gönder",
+      "resendHint": "Yeni bağlantı göndermemiz için e-posta adresini aşağıya gir.",
+      "resendSent": "Yeni bağlantı gönderildi. Gelen kutunu kontrol et.",
+      "recoveryCta": "Yeni şifre sıfırlama bağlantısı iste",
+      "errRateLimited": "Çok fazla deneme. Lütfen biraz sonra tekrar dene.",
+      "errGeneric": "Bağlantı gönderilemedi. Hesabın zaten doğrulanmışsa doğrudan giriş yapabilirsin."
+    },
     "addEmail": {
       "title": "Yedek e-posta ekle",
       "description": "Yedek giriş yolu olarak e-posta ve şifre ekle. Telefon koduyla girişe devam edebilirsin.",

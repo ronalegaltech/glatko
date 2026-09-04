@@ -16,8 +16,10 @@ const WEBP = new Uint8Array([
   0x52, 0x49, 0x46, 0x46, 0x00, 0x00, 0x00, 0x00, 0x57, 0x45, 0x42, 0x50,
 ]);
 // A forged payload: looks like SVG/HTML, NOT a raster image.
+// Array.from, not a spread: tsconfig has no `target`, so `tsc --noEmit`
+// defaults to ES5 and rejects iterating a string without downlevelIteration.
 const SVG = new Uint8Array(
-  [..."<svg xmlns=\"http://www.w3.org/2000/svg\"><script/>"].map((c) =>
+  Array.from("<svg xmlns=\"http://www.w3.org/2000/svg\"><script/>").map((c) =>
     c.charCodeAt(0),
   ),
 );

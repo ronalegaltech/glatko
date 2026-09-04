@@ -9,6 +9,11 @@ import { createClient } from "@/supabase/browser";
 import { useRouter } from "@/i18n/navigation";
 import { AuthBrandPanel } from "@/components/glatko/auth/AuthBrandPanel";
 import { AccountLinkAlert } from "@/components/auth/AccountLinkAlert";
+import {
+  AuthLinkNotice,
+  toAuthLinkErrorCode,
+  type AuthLinkErrorCode,
+} from "@/components/auth/AuthLinkNotice";
 import { lookupAuthMethods } from "@/lib/actions/auth-methods";
 import { cn } from "@/lib/utils";
 import { PhoneLoginPanel } from "@/components/auth/PhoneLoginPanel";
@@ -35,8 +40,18 @@ export default function LoginPage() {
   // account (rather than logging in) still returns to the wizard. Read in an
   // effect — reading window during render would mismatch SSR (null) vs client.
   const [registerRedirect, setRegisterRedirect] = useState<string | null>(null);
+  // /auth/confirm and /auth/callback bounce failed email links here with
+  // ?error=…&flow=…. Read in the same effect (and for the same reason) as the
+  // redirect above: touching window during render would mismatch SSR.
+  const [linkError, setLinkError] = useState<{
+    code: AuthLinkErrorCode;
+    flow: string | null;
+  } | null>(null);
   useEffect(() => {
     setRegisterRedirect(readPostLoginRedirect());
+    const params = new URLSearchParams(window.location.search);
+    const code = toAuthLinkErrorCode(params.get("error"));
+    if (code) setLinkError({ code, flow: params.get("flow") });
   }, []);
 
   function isInvalidCredentialsError(err: { code?: string; message?: string }) {
@@ -113,6 +128,14 @@ export default function LoginPage() {
           <p className="mt-2 text-sm text-gray-500 dark:text-neutral-400">
             {t("brand.tagline")}
           </p>
+
+          {linkError && (
+            <AuthLinkNotice
+              code={linkError.code}
+              flow={linkError.flow}
+              email={email}
+            />
+          )}
 
           <div className="mt-8">
             <motion.button

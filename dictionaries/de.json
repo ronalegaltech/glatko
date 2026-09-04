@@ -228,6 +228,17 @@
     "viberSupport": "Viber Support"
   },
   "auth": {
+    "linkNotice": {
+      "title": "Der Link hat nicht funktioniert",
+      "expiredDesc": "Dieser Link ist ungültig oder abgelaufen. Bestätigungslinks lassen sich nur einmal verwenden und verfallen nach einiger Zeit.",
+      "callbackDesc": "Die Anmeldung konnte nicht abgeschlossen werden. Bitte versuche es erneut.",
+      "resendCta": "Neuen Bestätigungslink senden",
+      "resendHint": "Gib unten deine E-Mail-Adresse ein, dann senden wir dir einen neuen Link.",
+      "resendSent": "Neuer Link gesendet. Sieh in deinem Postfach nach.",
+      "recoveryCta": "Neuen Link zum Zurücksetzen des Passworts anfordern",
+      "errRateLimited": "Zu viele Versuche. Bitte versuche es etwas später erneut.",
+      "errGeneric": "Der Link konnte nicht gesendet werden. Wenn dein Konto bereits bestätigt ist, melde dich einfach an."
+    },
     "addEmail": {
       "title": "Backup-E-Mail hinzufügen",
       "description": "Füge eine E-Mail und ein Passwort als alternative Anmeldung hinzu. Die Anmeldung per SMS-Code bleibt möglich.",
