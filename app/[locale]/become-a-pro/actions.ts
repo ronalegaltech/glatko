@@ -8,6 +8,7 @@ import { createClient, createAdminClient } from "@/supabase/server";
 import { normalizePhoneE164 } from "@/lib/phone/normalize";
 import { sendAdminProApplicationEmail } from "@/lib/email/pro-emails";
 import { glatkoCaptureException } from "@/lib/sentry/glatko-capture";
+import { toCitySlug } from "@/lib/glatko/cities";
 
 interface FormState {
   success: boolean;
@@ -188,7 +189,10 @@ export async function submitProfessionalApplication(
     business_name: parsed.data.businessName,
     bio: parsed.data.bio ?? null,
     phone: phoneResult.e164,
-    location_city: parsed.data.city,
+    // The wizard's city select posts the i18n KEY for one municipality
+    // ("hercegNovi") while other surfaces post the display name or the slug;
+    // location_city and the city-scoped RPCs group on the slug.
+    location_city: toCitySlug(parsed.data.city),
     languages: languages.length > 0 ? languages : ["en"],
     years_experience: parsed.data.yearsExperience ?? null,
     hourly_rate_min: parsed.data.hourlyRateMin ?? null,
