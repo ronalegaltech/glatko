@@ -4,8 +4,20 @@ import { cn } from "@/lib/utils";
 import type { useTranslations } from "next-intl";
 import { PhoneInput } from "@/components/ui/PhoneInput";
 import { ProWizardAvatarUpload } from "./ProWizardAvatarUpload";
+import { GLATKO_CITIES } from "@/lib/glatko/cities";
 
-const CITY_SLUGS = [
+/**
+ * Municipalities offered in the signup wizard. Listed by the SSOT `key` and
+ * resolved through GLATKO_CITIES so the option VALUE is always the canonical
+ * slug and the LABEL always the matching i18n key.
+ *
+ * The previous literal list conflated the two shapes: six entries happened to be
+ * both key and slug, but "hercegNovi" is the i18n key — its slug is
+ * "herceg-novi" — so every pro who picked Herceg Novi was written to
+ * location_city as "hercegNovi". The city-scoped RPCs (migration 060) match that
+ * column by exact equality, so those pros formed a second, invisible "city".
+ */
+const OFFERED_CITY_KEYS = [
   "budva",
   "kotor",
   "tivat",
@@ -14,6 +26,10 @@ const CITY_SLUGS = [
   "bar",
   "ulcinj",
 ] as const;
+
+const CITY_OPTIONS = OFFERED_CITY_KEYS.map((key) =>
+  GLATKO_CITIES.find((c) => c.key === key),
+).filter((c): c is (typeof GLATKO_CITIES)[number] => c !== undefined);
 
 // Canonical lowercase codes (DB stores these); the UI uppercases them for
 // display via CSS (text-transform), never by storing upper-cased values.
@@ -143,9 +159,9 @@ export function StepPersonalInfo({
             onChange={(e) => setCity(e.target.value)}
           >
             <option value="">{t("pro.wizard.selectCity")}</option>
-            {CITY_SLUGS.map((slug) => (
-              <option key={slug} value={slug}>
-                {t(`cities.${slug}`)}
+            {CITY_OPTIONS.map((c) => (
+              <option key={c.slug} value={c.slug}>
+                {t(`cities.${c.key}`)}
               </option>
             ))}
           </select>

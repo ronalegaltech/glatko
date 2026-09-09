@@ -3,6 +3,7 @@ import { dispatchExternalNotification } from "@/lib/notifications/external-dispa
 import { glatkoCaptureException } from "@/lib/sentry/glatko-capture";
 import { checkMessageSendRateLimit } from "@/lib/ratelimit/message-rate-limit";
 import { createClient, createAdminClient } from "@/supabase/server";
+import { toCitySlug } from "@/lib/glatko/cities";
 
 const MAX_CHAT_MESSAGE_LENGTH = 8000;
 import type {
@@ -237,7 +238,10 @@ export async function createProfessionalProfile(
       business_name: input.businessName || null,
       bio: input.bio || null,
       phone: input.phone || null,
-      location_city: input.city || null,
+      // Currently unreferenced, but normalised anyway: an unnormalised writer is
+      // exactly how "Budva" and "hercegNovi" got into the column, and this one
+      // would bypass the two server actions that guard the live paths.
+      location_city: input.city ? toCitySlug(input.city) : null,
       languages: input.languages ?? ["en"],
       years_experience: input.yearsExperience ?? null,
       hourly_rate_min: input.hourlyRateMin ?? null,
@@ -448,7 +452,7 @@ export async function notifyProfessionalsOfNewRequest(params: {
     .maybeSingle();
 
   const customerName = cust?.full_name?.trim() || "A customer";
-  const municipalityNorm = params.municipality.trim().toLowerCase();
+  const municipalityNorm = toCitySlug(params.municipality);
 
   const send = async (userId: string, isDirect: boolean) => {
     const body = isDirect
@@ -514,9 +518,16 @@ export async function notifyProfessionalsOfNewRequest(params: {
     .eq("is_active", true)
     .eq("is_verified", true);
 
+  // Both sides go through toCitySlug because the two columns hold different
+  // shapes of the same city: the request form posts the i18n KEY as
+  // `municipality` while `location_city` holds the SLUG. They are identical for
+  // 23 of the 25 municipalities, which is why this compared equal for so long —
+  // but "hercegNovi" never matches "herceg-novi" (nor "bijeloPolje"
+  // "bijelo-polje"), so providers there were skipped for requests in their own
+  // municipality. Production has 3 such requests today.
   const cityMatches = (city: string | null | undefined) => {
     if (city == null || String(city).trim() === "") return true;
-    return city.trim().toLowerCase() === municipalityNorm;
+    return toCitySlug(city) === municipalityNorm;
   };
 
   const otherIds = (proRows || [])
