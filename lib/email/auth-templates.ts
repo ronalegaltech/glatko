@@ -9,6 +9,7 @@
 import type { ReactElement } from "react";
 import React from "react";
 import { getSiteUrl } from "@/lib/email/resend";
+import { resolveConfirmNext } from "@/lib/auth/confirm";
 import AuthEmail from "@/lib/email/templates/auth/auth-email";
 import {
   getAuthEmailCommon,
@@ -124,8 +125,13 @@ function buildConfirmationUrl(
   const url = new URL("/auth/confirm", base);
   url.searchParams.set("token_hash", emailData.token_hash);
   url.searchParams.set("type", verifyOtpTypeFor(type));
-  if (emailData.redirect_to && emailData.redirect_to.startsWith("/")) {
-    url.searchParams.set("next", emailData.redirect_to);
+  // supabase-js sends `emailRedirectTo` as an absolute /auth/callback url, so
+  // a plain startsWith("/") test dropped it and the post-confirm destination
+  // (e.g. the /become-a-pro wizard) was lost. resolveConfirmNext keeps only
+  // same-origin targets and unwraps the callback to its inner `next`.
+  const next = resolveConfirmNext(emailData.redirect_to, base);
+  if (next) {
+    url.searchParams.set("next", next);
   }
   return url.toString();
 }

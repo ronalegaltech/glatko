@@ -228,6 +228,17 @@
     "viberSupport": "Viber Support"
   },
   "auth": {
+    "linkNotice": {
+      "title": "That link didn't work",
+      "expiredDesc": "This link is invalid or has expired. Confirmation links can only be used once and stop working after a while.",
+      "callbackDesc": "We couldn't finish signing you in. Please try again.",
+      "resendCta": "Send a new confirmation link",
+      "resendHint": "Enter your email address below and we'll send a new link.",
+      "resendSent": "New link sent. Check your inbox.",
+      "recoveryCta": "Request a new password reset link",
+      "errRateLimited": "Too many attempts. Please try again shortly.",
+      "errGeneric": "We couldn't send the link. If your account is already confirmed, just log in."
+    },
     "addEmail": {
       "title": "Add a backup email",
       "description": "Add an email and password as a backup way to sign in. You can still log in with a phone code.",

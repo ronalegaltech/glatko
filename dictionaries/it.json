@@ -228,6 +228,17 @@
     "viberSupport": "Viber Support"
   },
   "auth": {
+    "linkNotice": {
+      "title": "Il link non ha funzionato",
+      "expiredDesc": "Questo link non è valido o è scaduto. I link di conferma si possono usare una sola volta e dopo un po' smettono di funzionare.",
+      "callbackDesc": "Non siamo riusciti a completare l'accesso. Riprova.",
+      "resendCta": "Invia un nuovo link di conferma",
+      "resendHint": "Inserisci qui sotto il tuo indirizzo email e ti invieremo un nuovo link.",
+      "resendSent": "Nuovo link inviato. Controlla la tua casella di posta.",
+      "recoveryCta": "Richiedi un nuovo link per reimpostare la password",
+      "errRateLimited": "Troppi tentativi. Riprova tra poco.",
+      "errGeneric": "Non siamo riusciti a inviare il link. Se il tuo account è già confermato, accedi direttamente."
+    },
     "addEmail": {
       "title": "Aggiungi un'email di backup",
       "description": "Aggiungi un'email e una password come metodo di accesso alternativo. Puoi comunque accedere con il codice SMS.",
