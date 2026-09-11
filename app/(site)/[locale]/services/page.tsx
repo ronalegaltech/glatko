@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { createClient } from "@/supabase/server";
+import { createPublicClient } from "@/supabase/server";
 import { routing, type Locale } from "@/i18n/routing";
 import { CategoryGrid, type P0CategoryCard } from "@/components/categories/CategoryGrid";
 import { SearchTrigger } from "@/components/glatko/search/SearchTrigger";
@@ -74,15 +74,18 @@ function pickName(name: Record<string, string>, locale: Locale): string {
   return name[locale] ?? name.en ?? Object.values(name)[0] ?? "";
 }
 
+// perf-static (2026-09-11): prerendered per locale, refreshed hourly.
+export const revalidate = 3600;
+
 export default async function ServicesPage({ params }: Props) {
   const { locale } = await Promise.resolve(params);
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
 
-  const supabase = createClient();
+  const supabase = createPublicClient();
   const t = await getTranslations();
 
-  const { data: roots } = await supabase
+  const { data: roots, error: rootsError } = await supabase
     .from("glatko_service_categories")
     .select(
       "id, slug, name, icon, hero_image_url, seasonal, active_months, badge_priority",
@@ -91,6 +94,8 @@ export default async function ServicesPage({ params }: Props) {
     .is("parent_id", null)
     .eq("is_active", true)
     .order("badge_priority", { ascending: true });
+  // perf-static (2026-09-11): never bake an empty directory into the static page.
+  if (rootsError) throw new Error(`services roots: ${rootsError.message}`);
 
   const rootRows = (roots ?? []) as RootRow[];
   const rootIds = rootRows.map((r) => r.id);

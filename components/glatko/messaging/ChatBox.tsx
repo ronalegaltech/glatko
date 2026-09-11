@@ -15,7 +15,7 @@ import {
   sendMessage,
   markQuoteComplete,
   confirmQuoteCompletion,
-} from "@/app/[locale]/messages/actions";
+} from "@/app/(site)/[locale]/messages/actions";
 import { ReviewModal } from "@/components/glatko/customer/ReviewModal";
 import { trackEventWithMeta } from "@/lib/analytics/track";
 

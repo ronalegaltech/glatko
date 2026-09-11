@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import {
   removeProAction,
   restoreProAction,
-} from "@/app/[locale]/admin/professionals/actions";
+} from "@/app/(site)/[locale]/admin/professionals/actions";
 
 interface Props {
   professionalId: string;

@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
-import { headers } from "next/headers";
+import { hasLocale } from "next-intl";
 import { Inter, Cormorant_Garamond } from "next/font/google";
-import "./globals.css";
+import "../../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
@@ -9,7 +8,94 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { MetaPixel } from "@/components/glatko/analytics/MetaPixel";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { buildAlternates } from "@/lib/seo";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { GlatkoFooter } from "@/components/GlatkoFooter";
+import { VerticalsNav } from "@/components/glatko/verticals/VerticalsNav";
+import { isHealthVerticalEnabled } from "@/lib/saglik/flags";
+import { CookieConsent } from "@/components/glatko/CookieConsent";
+import { YandexMetrica } from "@/components/seo/YandexMetrica";
+import { SearchModalProvider } from "@/components/glatko/search/SearchModalContext";
+import { SessionProvider } from "@/components/glatko/session/SessionProvider";
+import {
+  HeaderBound,
+  OnboardingBannerBound,
+  SearchModalBound,
+  SentryUserScopeBound,
+} from "@/components/glatko/session/SessionBound";
+import {
+  generateOrganizationSchema,
+  jsonLdScriptProps,
+} from "@/lib/seo/jsonld";
+import type { Metadata } from "next";
 
+type Props = {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }> | { locale: string };
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }> | { locale: string };
+}): Promise<Metadata> {
+  const { locale } = await Promise.resolve(params);
+  if (!hasLocale(routing.locales, locale)) return {};
+  const t = await getTranslations({ locale });
+  const title = t("seo.landingTitle");
+  const description = t("seo.landingDesc");
+  // Locale homepage canonical + 9-locale hreflang via the single helper.
+  // See docs/audits/gsc-audit-2026-05-18.md Bugs A/C for the prior
+  // double-emission pattern this replaces.
+  const alternates = buildAlternates(locale, "/");
+  return {
+    metadataBase: new URL("https://glatko.app"),
+    title: {
+      default: title,
+      template: "%s | Glatko",
+    },
+    description,
+    alternates,
+    openGraph: {
+      title,
+      description,
+      url: alternates.canonical,
+      siteName: "Glatko",
+      locale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    // Moved from the former app/layout.tsx (perf-static 2026-09-11).
+    icons: {
+      icon: "/icon.svg",
+      apple: "/apple-icon.svg",
+    },
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION,
+      yandex: process.env.YANDEX_VERIFICATION,
+      other: Object.keys(verificationOther).length > 0 ? verificationOther : undefined,
+    },
+  };
+}
+
+const RTL_LOCALES = new Set(["ar"]);
+
+// perf-static (2026-09-11): this is the ROOT layout for the whole locale tree
+// now (app/layout.tsx used to wrap it and read the `x-pathname` header to set
+// <html lang>, which forced every page into per-request rendering). The lang
+// comes from the route param instead, so the shell is fully static.
 // BCP 47 lang tag for the <html lang> attribute. Decoupled from URL prefix
 // so URLs stay short (/me/, /sr/) but crawlers see the explicit script subtag.
 //   me → sr-Latn-ME (Montenegrin Latin script)
@@ -26,10 +112,6 @@ const URL_LOCALE_TO_HTML_LANG: Record<string, string> = {
   uk: "uk",
 };
 
-function resolveLocaleFromPath(pathname: string): string {
-  const match = pathname.match(/^\/(ar|de|en|it|me|ru|sr|tr|uk)(?:\/|$)/);
-  return match ? match[1] : "en";
-}
 
 const inter = Inter({
   subsets: ["latin", "cyrillic", "latin-ext"],
@@ -68,51 +150,32 @@ if (process.env.FACEBOOK_DOMAIN_VERIFICATION) {
     process.env.FACEBOOK_DOMAIN_VERIFICATION;
 }
 
-export const metadata: Metadata = {
-  title: {
-    default: "Glatko — Montenegro's Premier Service Marketplace",
-    template: "%s | Glatko",
-  },
-  description:
-    "Find trusted professionals for home services, boat maintenance, and more in Montenegro. Get free quotes from verified experts.",
-  metadataBase: new URL("https://glatko.app"),
-  icons: {
-    icon: "/icon.svg",
-    apple: "/apple-icon.svg",
-  },
-  openGraph: {
-    type: "website",
-    siteName: "Glatko",
-    locale: "en",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION,
-    yandex: process.env.YANDEX_VERIFICATION,
-    other: Object.keys(verificationOther).length > 0 ? verificationOther : undefined,
-  },
-};
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  // x-pathname is set by middleware (see middleware.ts). Used here to resolve
-  // the locale for the <html lang> attribute on initial SSR — the previous
-  // approach was a client-only useEffect (HtmlLangSetter) which left the
-  // attribute empty for crawlers. See G-SEO-AUDIT M2/M11.
-  const headersList = await headers();
-  const pathname = headersList.get("x-pathname") ?? "/";
-  const urlLocale = resolveLocaleFromPath(pathname);
-  const htmlLang = URL_LOCALE_TO_HTML_LANG[urlLocale] ?? "en";
-  const dir = urlLocale === "ar" ? "rtl" : "ltr";
+// perf-static (2026-09-11): without this, a `[locale]` route is rendered on
+// demand for every request in Next 16 (no prerender, `private, no-store`),
+// even when nothing in the tree is dynamic. With it, every page under
+// /[locale] that does not read cookies/headers is prerendered per locale.
+export function generateStaticParams(): Array<{ locale: string }> {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({ children, params }: Props) {
+  const { locale } = await Promise.resolve(params);
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
+  const dir = RTL_LOCALES.has(locale) ? "rtl" : "ltr";
+  const htmlLang = URL_LOCALE_TO_HTML_LANG[locale] ?? "en";
+
+  // perf-static (2026-09-11): no auth here any more. Reading the session
+  // cookie in the layout made every page a per-request serverless render;
+  // the viewer is resolved on the client by SessionProvider (/api/session)
+  // and fed to the header / banner / Sentry / search modal via SessionBound.
 
   return (
     <html lang={htmlLang} dir={dir} suppressHydrationWarning>
@@ -196,7 +259,42 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+    <NextIntlClientProvider messages={messages}>
+      <NuqsAdapter>
+        <SessionProvider locale={locale}>
+        <SearchModalProvider>
+          <script {...jsonLdScriptProps(generateOrganizationSchema(locale))} />
+          <SentryUserScopeBound />
+          <div className="flex min-h-screen flex-col" dir={dir}>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[999] focus:rounded-xl focus:bg-teal-500 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
+            >
+              Skip to content
+            </a>
+            {/* Two-layer global header (combined into ONE sticky block at the
+                top of every page, so the layers never overlap and merge as the
+                3-tab bar collapses on scroll):
+                  KATMAN 1 — VerticalsNav (vertical switcher, always on top)
+                  KATMAN 2 — GlatkoHeader (per-vertical app header, below it)
+                The block is in-flow, so pages keep their existing top padding
+                (it now sits below the block instead of clearing a fixed header;
+                content lands at the same offset as before). */}
+            <div className="sticky top-0 z-50">
+              <VerticalsNav healthEnabled={isHealthVerticalEnabled()} />
+              <HeaderBound />
+            </div>
+            <OnboardingBannerBound />
+            <main id="main-content" className="flex-1">{children}</main>
+            <GlatkoFooter />
+            <CookieConsent />
+          </div>
+          <SearchModalBound locale={locale} />
+          <YandexMetrica />
+        </SearchModalProvider>
+        </SessionProvider>
+      </NuqsAdapter>
+    </NextIntlClientProvider>
           <Toaster richColors position="top-right" />
           <Analytics />
           <SpeedInsights />

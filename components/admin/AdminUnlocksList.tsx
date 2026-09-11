@@ -7,8 +7,8 @@ import { BadgeCheck, Check, Clock, FileText, Loader2 } from "lucide-react";
 import {
   approveUnlock,
   markUnlockPaid,
-} from "@/app/[locale]/admin/career/unlocks/actions";
-import type { AdminUnlockRow } from "@/app/[locale]/admin/career/unlocks/page";
+} from "@/app/(site)/[locale]/admin/career/unlocks/actions";
+import type { AdminUnlockRow } from "@/app/(site)/[locale]/admin/career/unlocks/page";
 
 interface Props {
   rows: AdminUnlockRow[];

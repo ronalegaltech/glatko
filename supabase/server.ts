@@ -22,7 +22,13 @@ export function createClient() {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-    if (!url || !key || process.env.NEXT_PHASE === 'phase-production-build') {
+    // perf-static (2026-09-11): the old `NEXT_PHASE === 'phase-production-build'`
+    // short-circuit is gone on purpose. It hid the cookies() call from the
+    // build, so once the layout tree became static-capable every gated page
+    // (pro dashboard, messages, settings, admin…) was prerendered as a GUEST
+    // shell and served from the CDN for a year. Calling cookies() during the
+    // build is exactly how Next learns that a route is dynamic.
+    if (!url || !key) {
         return createServerClient(
             url || 'http://localhost:54321',
             key || 'dummy-key',
@@ -57,6 +63,24 @@ export function createClient() {
             },
         }
     )
+}
+
+/**
+ * perf-static (2026-09-11): cookie-less anon client for public, cacheable
+ * reads (static / ISR pages: home, /services, /pros/[slug], sitemap…).
+ *
+ * `createClient()` above calls `cookies()`, and any call to it during a
+ * render opts the whole route into per-request rendering — which is exactly
+ * what kept every public page of the site out of the CDN. This one carries
+ * no session, so it sees precisely what an anonymous visitor sees (RLS as
+ * `anon`) and can run at build time and inside ISR regeneration.
+ */
+export function createPublicClient() {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL || 'http://localhost:54321'
+    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'dummy-key'
+    return createSupabaseClient(url, key, {
+        auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
+    })
 }
 
 export function createAdminClient() {

@@ -3,7 +3,7 @@
 import { useState, useTransition } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
-import { cancelRequest } from "@/app/[locale]/dashboard/requests/[id]/actions";
+import { cancelRequest } from "@/app/(site)/[locale]/dashboard/requests/[id]/actions";
 import { cn } from "@/lib/utils";
 import { Loader2, X } from "lucide-react";
 

@@ -50,6 +50,9 @@ interface CountsShape {
   customer_remaining: number;
 }
 
+// perf-static (2026-09-11): prerendered per locale; the founding counter is refreshed every 600 s.
+export const revalidate = 600;
+
 export default async function HowItWorksPage({ params }: PageProps) {
   const { locale } = await Promise.resolve(params);
   if (!hasLocale(routing.locales, locale)) return null;

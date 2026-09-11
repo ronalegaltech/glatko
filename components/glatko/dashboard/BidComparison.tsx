@@ -14,7 +14,7 @@ import {
   MessageSquare,
   ShieldCheck,
 } from "lucide-react";
-import { acceptBidAction } from "@/app/[locale]/dashboard/requests/[id]/actions";
+import { acceptBidAction } from "@/app/(site)/[locale]/dashboard/requests/[id]/actions";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { trackEventWithMeta } from "@/lib/analytics/track";

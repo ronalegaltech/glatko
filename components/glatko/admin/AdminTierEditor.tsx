@@ -7,7 +7,7 @@ import { Loader2, Save } from "lucide-react";
 import {
   adminSetProTier,
   type VerificationTier,
-} from "@/app/[locale]/admin/professionals/actions";
+} from "@/app/(site)/[locale]/admin/professionals/actions";
 import { cn } from "@/lib/utils";
 
 interface Props {

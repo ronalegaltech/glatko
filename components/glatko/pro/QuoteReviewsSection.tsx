@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { Star, MessageCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { respondToReview } from "@/app/[locale]/pros/[slug]/actions";
+import { respondToReview } from "@/app/(site)/[locale]/pros/[slug]/actions";
 
 interface QuoteReview {
   id: string;

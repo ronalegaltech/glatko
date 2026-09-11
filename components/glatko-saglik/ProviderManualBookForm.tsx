@@ -4,7 +4,7 @@ import { useEffect, useState, useTransition } from "react";
 import { useTranslations } from "next-intl";
 import { Loader2, Check } from "lucide-react";
 
-import { createManualBooking } from "@/app/[locale]/health-pro/actions";
+import { createManualBooking } from "@/app/(site)/[locale]/health-pro/actions";
 import { manualBookSchema } from "@/lib/saglik/provider-validation";
 import { intlLocale } from "@/lib/saglik/intl";
 import type { Locale } from "@/i18n/routing";

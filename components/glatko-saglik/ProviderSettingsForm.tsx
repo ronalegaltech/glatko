@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { useTranslations } from "next-intl";
 import { Loader2, Check } from "lucide-react";
 
-import { saveSettings } from "@/app/[locale]/health-pro/actions";
+import { saveSettings } from "@/app/(site)/[locale]/health-pro/actions";
 import { settingsSchema, SLOT_GRID_VALUES } from "@/lib/saglik/provider-validation";
 import type { OwnProviderSettings } from "@/lib/saglik/provider";
 

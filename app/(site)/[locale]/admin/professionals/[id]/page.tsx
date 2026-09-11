@@ -8,7 +8,7 @@ import {
 import { AdminActions } from "@/components/glatko/admin/AdminActions";
 import { AdminTierEditor } from "@/components/glatko/admin/AdminTierEditor";
 import { ProActiveToggle } from "@/components/glatko/admin/ProActiveToggle";
-import type { VerificationTier } from "@/app/[locale]/admin/professionals/actions";
+import type { VerificationTier } from "@/app/(site)/[locale]/admin/professionals/actions";
 import { ArrowLeft, Pencil } from "lucide-react";
 import type { VerificationStatus, DocumentStatus } from "@/types/glatko";
 

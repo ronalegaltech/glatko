@@ -10,7 +10,7 @@ import {
   removeLocation,
   saveService,
   removeService,
-} from "@/app/[locale]/health-pro/actions";
+} from "@/app/(site)/[locale]/health-pro/actions";
 import {
   profileSchema,
   locationSchema,

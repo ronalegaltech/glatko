@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { getUnreadMessageCountAction } from "@/app/[locale]/messages/actions";
+import { getUnreadMessageCountAction } from "@/app/(site)/[locale]/messages/actions";
 
 /** Header unread badge for /messages — thread-only count (G-DEADCODE). */
 export function UnreadBadge() {

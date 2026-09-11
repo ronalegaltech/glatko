@@ -17,7 +17,7 @@ import {
   User,
   X,
 } from "lucide-react";
-import { submitProfessionalApplication } from "@/app/[locale]/become-a-pro/actions";
+import { submitProfessionalApplication } from "@/app/(site)/[locale]/become-a-pro/actions";
 import { adoptOAuthAvatar } from "@/lib/actions/profile";
 import { useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";

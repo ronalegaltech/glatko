@@ -21,7 +21,7 @@ import {
   markReadAction,
   markAllReadAction,
   getUnreadCountAction,
-} from "@/app/[locale]/notifications/actions";
+} from "@/app/(site)/[locale]/notifications/actions";
 import { cn } from "@/lib/utils";
 import { useRouter } from "@/i18n/navigation";
 import { toast } from "sonner";

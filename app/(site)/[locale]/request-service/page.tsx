@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { createClient } from "@/supabase/server";
 import { getServiceCategories } from "@/lib/supabase/glatko.server";
 import { routing } from "@/i18n/routing";
 import { buildAlternates } from "@/lib/seo";
@@ -33,22 +32,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
  * the userId we hand to the client is purely a UX signal — never trusted
  * for authorization.
  */
+export const revalidate = 3600;
+
 export default async function RequestServicePage({ params }: Props) {
   const { locale } = await Promise.resolve(params);
   setRequestLocale(locale);
 
-  const supabase = createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-
+  // perf-static (2026-09-11): the page is prerendered; the wizard reads the
+  // viewer from SessionProvider on the client (it only ever used userId as a
+  // UX hint — submitServiceRequest re-reads auth from cookies server-side).
   const categories: ServiceCategory[] = await getServiceCategories();
 
   return (
     <PageBackground opacity={0.1}>
       <div className="mx-auto max-w-3xl px-4 pb-20 pt-28 sm:px-6">
-        <RequestServiceWizard
-          categories={categories}
-          userId={user?.id ?? null}
-        />
+        <RequestServiceWizard categories={categories} />
       </div>
     </PageBackground>
   );

@@ -3,8 +3,8 @@
 import { useState, useTransition } from "react";
 import Link from "next/link";
 import { Star, EyeOff, RotateCcw } from "lucide-react";
-import { setReviewStatus } from "@/app/[locale]/admin/reviews/actions";
-import type { AdminReviewRow } from "@/app/[locale]/admin/reviews/page";
+import { setReviewStatus } from "@/app/(site)/[locale]/admin/reviews/actions";
+import type { AdminReviewRow } from "@/app/(site)/[locale]/admin/reviews/page";
 import { cn } from "@/lib/utils";
 
 interface Props {

@@ -20,8 +20,8 @@ import { cn } from "@/lib/utils";
 import {
   approveRequest,
   rejectRequest,
-} from "@/app/[locale]/admin/requests/actions";
-import type { AdminRequestRow } from "@/app/[locale]/admin/requests/page";
+} from "@/app/(site)/[locale]/admin/requests/actions";
+import type { AdminRequestRow } from "@/app/(site)/[locale]/admin/requests/page";
 
 interface Props {
   rows: AdminRequestRow[];

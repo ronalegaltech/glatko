@@ -7,7 +7,7 @@ import { Loader2, Check, XCircle, UserX, Ban } from "lucide-react";
 import {
   changeAppointmentStatus,
   loadProviderAppointments,
-} from "@/app/[locale]/health-pro/actions";
+} from "@/app/(site)/[locale]/health-pro/actions";
 import type { ProviderAppointment } from "@/lib/saglik/provider";
 import { canTransition, type AppointmentStatus } from "@/lib/saglik/occupancy";
 import { intlLocale } from "@/lib/saglik/intl";
