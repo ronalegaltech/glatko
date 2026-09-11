@@ -88,3 +88,26 @@ ve `prerender-manifest.json` ile doğrulanır.
 hata dönerse fırlatır (build kırılır ya da ISR eski sayfayı korur), `getCategoryBySlug` /
 `getProfessionalProfileBySlug` yalnız `PGRST116` (satır yok) durumunda 404 verir — build 2'de
 Sanity/Supabase bağlantı zaman aşımları görüldüğü için (statik sayfaya boş veri gömülmesin).
+
+## Canlı (PR #148 squash `7d3042cb`, deploy 2026-09-11 21:26 TSİ)
+
+Başlıklar: `/tr` → `x-vercel-cache: HIT`, `cache-control: public, max-age=0, must-revalidate`,
+ilk bayt ~150 ms (önce MISS + `private, no-cache, no-store`, ~400–650 ms); `/en`,
+`/tr/hizmetler`, `/tr/hizmetler/[slug]`, `/tr/pros/[slug]`, `/tr/request-service`,
+`/tr/nasil-calisir`, `/tr/blog` → PRERENDER/HIT; blog yazısı → ilk istek MISS, sonra STALE/HIT
+(istek-anında ISR, 60 s); `/tr/pro/dashboard`, `/tr/messages` → `private, no-store` (dinamik,
+doğru); `/api/session` → `private, no-store`; `<html lang="tr" dir="ltr">`, `/ar` → `rtl`;
+ana sayfada 16 kategori linki (veri dolu).
+
+Lighthouse 12 (canlı):
+
+| Sayfa | Cihaz | Perf | A11y | BP | LCP | Not |
+|---|---|---|---|---|---|---|
+| /tr | masaüstü | **99** | 96 | 77 | 0,9 s | |
+| /tr | mobil | 66 | 96 | 77 | 9,3 s | 2,0 MB toplam, 50 script |
+| /tr/hizmetler | mobil | 61 | 95 | 77 | 12,6 s | 2,0 MB, 42 script |
+
+Sunucu tarafı (TTFB / önbellek) bu PR ile çözüldü; mobil skor artık tamamen istemci JS ve
+üçüncü taraf yüküne (GTM, Meta Pixel, Vercel insights, Sentry, Yandex, framer-motion…) bağlı —
+`docs/` içindeki CWV yol haritasının (1C JS-erteleme, sahip kararıyla ertelenmişti) konusu.
+BP 77 de aynı kaynaklardan (üçüncü taraf çerezleri / konsol hataları).
