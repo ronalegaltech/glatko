@@ -17,11 +17,18 @@ import {
 } from "@/lib/seo/jsonld";
 import { type FAQBlockItem } from "@/components/blog/FAQBlock";
 
-// Dynamic with a short ISR window. The [locale] layout reads the auth
-// session (cookies → dynamic), so the whole tree is dynamic regardless;
-// declaring `generateStaticParams` here just made Next try to pre-render
-// unlisted slugs and 500 with DYNAMIC_SERVER_USAGE.
+// perf-static (2026-09-11): the [locale] layout no longer reads the auth
+// session, so the tree is static-capable. An EMPTY generateStaticParams is
+// what turns this route from "rendered on every request" (private, no-store)
+// into on-demand ISR in Next 14 — the first visit renders and caches a post,
+// later visits are served from the cache and refreshed every 60 s. Nothing is
+// prerendered at build time (one Sanity round-trip per post is why the old
+// attempt was pulled) and dynamicParams stays on for new slugs.
 export const revalidate = 60;
+
+export function generateStaticParams(): Array<{ locale: string; slug: string }> {
+  return [];
+}
 
 interface Props {
   params: Promise<{ locale: string; slug: string }> | { locale: string; slug: string };

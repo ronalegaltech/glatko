@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Gavel, Calendar, MapPin, DollarSign, Play, CheckCircle, MessageSquare, Loader2 } from "lucide-react";
-import { withdrawBidAction, startJobAction, completeJobAction } from "@/app/[locale]/pro/dashboard/bids/actions";
+import { withdrawBidAction, startJobAction, completeJobAction } from "@/app/(site)/[locale]/pro/dashboard/bids/actions";
 import { cn } from "@/lib/utils";
 
 interface BidItem {

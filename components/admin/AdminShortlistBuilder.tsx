@@ -15,7 +15,7 @@ import {
   addShortlistItem,
   removeShortlistItem,
   publishShortlist,
-} from "@/app/[locale]/admin/career/shortlists/actions";
+} from "@/app/(site)/[locale]/admin/career/shortlists/actions";
 import type {
   AdminShortlistData,
   AdminShortlistItemRow,

@@ -4,7 +4,7 @@ import { useMemo, useState, useTransition } from "react";
 import { useTranslations } from "next-intl";
 import { Loader2, Plus, Trash2, Check } from "lucide-react";
 
-import { saveSchedules } from "@/app/[locale]/health-pro/actions";
+import { saveSchedules } from "@/app/(site)/[locale]/health-pro/actions";
 import { hasWeekdayOverlap } from "@/lib/saglik/provider-validation";
 import type { OwnProviderLocation, OwnProviderScheduleRow } from "@/lib/saglik/provider";
 import type { Locale } from "@/i18n/routing";

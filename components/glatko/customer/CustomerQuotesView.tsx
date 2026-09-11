@@ -14,7 +14,7 @@ import {
   Hourglass,
 } from "lucide-react";
 import { Tooltip } from "@/components/aceternity/tooltip";
-import { openOrCreateThread } from "@/app/[locale]/messages/actions";
+import { openOrCreateThread } from "@/app/(site)/[locale]/messages/actions";
 
 type CategoryNames = Record<string, string>;
 

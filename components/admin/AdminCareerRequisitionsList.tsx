@@ -3,8 +3,8 @@
 import { useState, useTransition } from "react";
 import Link from "next/link";
 import { ChevronRight, CheckCircle2 } from "lucide-react";
-import { setRequisitionStatus } from "@/app/[locale]/admin/career/requisitions/actions";
-import type { AdminRequisitionRow } from "@/app/[locale]/admin/career/requisitions/page";
+import { setRequisitionStatus } from "@/app/(site)/[locale]/admin/career/requisitions/actions";
+import type { AdminRequisitionRow } from "@/app/(site)/[locale]/admin/career/requisitions/page";
 import { cn } from "@/lib/utils";
 
 interface Props {

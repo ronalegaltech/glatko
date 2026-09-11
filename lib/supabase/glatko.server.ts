@@ -2,7 +2,7 @@ import { dispatchNotificationEmail } from "@/lib/email/dispatch";
 import { dispatchExternalNotification } from "@/lib/notifications/external-dispatch";
 import { glatkoCaptureException } from "@/lib/sentry/glatko-capture";
 import { checkMessageSendRateLimit } from "@/lib/ratelimit/message-rate-limit";
-import { createClient, createAdminClient } from "@/supabase/server";
+import { createClient, createAdminClient, createPublicClient } from "@/supabase/server";
 import { toCitySlug } from "@/lib/glatko/cities";
 
 const MAX_CHAT_MESSAGE_LENGTH = 8000;
@@ -19,14 +19,19 @@ import type {
   RecentSearchClickType,
 } from "@/types/glatko";
 export async function getServiceCategories(): Promise<ServiceCategory[]> {
-  const supabase = createClient();
+  // perf-static (2026-09-11): public read, no session needed; cookie-less so static/ISR pages can call it
+  const supabase = createPublicClient();
   const { data, error } = await supabase
     .from("glatko_service_categories")
     .select("*")
     .eq("is_active", true)
     .order("sort_order");
 
-  if (error || !data) return [];
+  // perf-static (2026-09-11): the category tree feeds prerendered pages —
+  // an error must fail the build / ISR regeneration (which keeps the last
+  // good page) rather than silently bake an empty list into static HTML.
+  if (error) throw new Error(`getServiceCategories: ${error.message}`);
+  if (!data) return [];
 
   const rows = data as ServiceCategory[];
   const roots: ServiceCategory[] = [];
@@ -83,7 +88,8 @@ export async function getProfessionalProfile(
 export async function getProfessionalProfileBySlug(
   slug: string
 ): Promise<ProfessionalProfile | null> {
-  const supabase = createClient();
+  // perf-static (2026-09-11): public read, no session needed; cookie-less so static/ISR pages can call it
+  const supabase = createPublicClient();
 
   // PII lockdown (087): public profile reads the PII-free view (no phone /
   // company_documents / admin_notes / raw tier_documents). full_name + avatar_url
@@ -94,7 +100,12 @@ export async function getProfessionalProfileBySlug(
     .eq("slug", slug)
     .single();
 
-  if (error || !pro) return null;
+  // PGRST116 = no rows → a real 404. Anything else (network, RLS) must not be
+  // cached as a not-found page by the static build (perf-static 2026-09-11).
+  if (error && error.code !== "PGRST116") {
+    throw new Error(`getProfessionalProfileBySlug(${slug}): ${error.message}`);
+  }
+  if (!pro) return null;
 
   const { data: services } = await supabase
     .from("glatko_pro_services")
@@ -119,7 +130,8 @@ export async function getProfessionalProfileBySlug(
 export async function getProfessionalsForSitemap(): Promise<
   { slug: string; updated_at: string }[]
 > {
-  const supabase = createClient();
+  // perf-static (2026-09-11): public read, no session needed; cookie-less so static/ISR pages can call it
+  const supabase = createPublicClient();
   const { data, error } = await supabase
     .from("glatko_public_professionals")
     .select("slug, updated_at")
@@ -1136,7 +1148,8 @@ export async function getPublishedReviews(
 export async function calculateTrustBadges(
   professionalId: string
 ): Promise<string[]> {
-  const supabase = createClient();
+  // perf-static (2026-09-11): reads the PII-locked base table (anon is denied since 087b) and returns only a boolean/badges; service role gives the true answer for every viewer
+  const supabase = createAdminClient();
   const { data: profile } = await supabase
     .from("glatko_professional_profiles")
     .select(
@@ -1404,7 +1417,7 @@ export async function getUnreadNotificationCount(
  * getCitiesServingCategory.
  */
 async function expandRootCategoryIds(
-  supabase: ReturnType<typeof createClient>,
+  supabase: ReturnType<typeof createClient> | ReturnType<typeof createPublicClient>,
   categoryId: string,
 ): Promise<string[]> {
   const { data: cat } = await supabase
@@ -1434,7 +1447,8 @@ export async function searchProfessionals(params: {
   page?: number;
   limit?: number;
 }) {
-  const supabase = createClient();
+  // perf-static (2026-09-11): public read, no session needed; cookie-less so static/ISR pages can call it
+  const supabase = createPublicClient();
   const { page = 1, limit = 12 } = params;
   const offset = (page - 1) * limit;
 
@@ -1596,7 +1610,8 @@ interface ParentCategorySlim {
  * `parent` projection so breadcrumbs can include the root.
  */
 export async function getCategoryBySlug(slug: string) {
-  const supabase = createClient();
+  // perf-static (2026-09-11): public read, no session needed; cookie-less so static/ISR pages can call it
+  const supabase = createPublicClient();
 
   const { data, error } = await supabase
     .from("glatko_service_categories")
@@ -1607,7 +1622,12 @@ export async function getCategoryBySlug(slug: string) {
     .eq("is_active", true)
     .single();
 
-  if (error || !data) return null;
+  // PGRST116 = no rows → 404; other errors must not become a cached 404
+  // (perf-static 2026-09-11).
+  if (error && error.code !== "PGRST116") {
+    throw new Error(`getCategoryBySlug(${slug}): ${error.message}`);
+  }
+  if (!data) return null;
 
   // Supabase query builder may inline the FK relation as either an object
   // or a single-element array depending on schema; normalise both.
@@ -1640,7 +1660,8 @@ export async function getCategoryBySlug(slug: string) {
  * pages can fetch only what they need.
  */
 export async function getSubCategories(parentId: string) {
-  const supabase = createClient();
+  // perf-static (2026-09-11): public read, no session needed; cookie-less so static/ISR pages can call it
+  const supabase = createPublicClient();
   const { data } = await supabase
     .from("glatko_service_categories")
     .select("id, slug, name, hero_image_url")
@@ -1753,7 +1774,8 @@ export const CATEGORY_EDITORIAL_MIN_CHARS = 300;
 export async function categoryTreeHasApprovedProvider(
   categoryId: string,
 ): Promise<boolean> {
-  const supabase = createClient();
+  // perf-static (2026-09-11): reads the PII-locked base table (anon is denied since 087b) and returns only a boolean/badges; service role gives the true answer for every viewer
+  const supabase = createAdminClient();
   const categoryIds = await expandRootCategoryIds(supabase, categoryId);
   const { data, error } = await supabase
     .from("glatko_professional_profiles")
@@ -1775,7 +1797,8 @@ export async function categoryTreeHasApprovedProvider(
 export async function getCitiesServingCategory(
   categoryId: string,
 ): Promise<string[]> {
-  const supabase = createClient();
+  // perf-static (2026-09-11): public read, no session needed; cookie-less so static/ISR pages can call it
+  const supabase = createPublicClient();
   // Same root/sub semantics as searchProfessionals: a root category's
   // areaServed should include cities from pros offering any sub-category.
   const categoryIds = await expandRootCategoryIds(supabase, categoryId);

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { openOrCreateThread } from "@/app/[locale]/messages/actions";
+import { openOrCreateThread } from "@/app/(site)/[locale]/messages/actions";
 import {
   Clock,
   MapPin,

@@ -33,7 +33,7 @@ const ProgressBar = dynamic(
 import {
   getProAnalyticsAction,
   getProfileCompletenessAction,
-} from "@/app/[locale]/pro/dashboard/actions";
+} from "@/app/(site)/[locale]/pro/dashboard/actions";
 
 interface Props {
   displayName: string;

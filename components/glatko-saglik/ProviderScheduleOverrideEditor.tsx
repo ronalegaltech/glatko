@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { useTranslations } from "next-intl";
 import { Loader2, Plus, Trash2, Check } from "lucide-react";
 
-import { saveOverride, removeOverride } from "@/app/[locale]/health-pro/actions";
+import { saveOverride, removeOverride } from "@/app/(site)/[locale]/health-pro/actions";
 import { overrideSchema, OVERRIDE_KINDS, type OverrideKind } from "@/lib/saglik/provider-validation";
 import type { ProviderOverride } from "@/lib/saglik/provider";
 import { intlLocale } from "@/lib/saglik/intl";

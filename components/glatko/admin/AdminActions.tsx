@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import type { VerificationStatus } from "@/types/glatko";
-import { updateProfessionalStatus } from "@/app/[locale]/admin/professionals/actions";
+import { updateProfessionalStatus } from "@/app/(site)/[locale]/admin/professionals/actions";
 
 interface AdminActionsProps {
   professionalId: string;

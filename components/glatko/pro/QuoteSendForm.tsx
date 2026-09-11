@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useModal } from "@/components/aceternity/modal";
-import { submitQuote } from "@/app/[locale]/pro/dashboard/leads/actions";
+import { submitQuote } from "@/app/(site)/[locale]/pro/dashboard/leads/actions";
 import type { Lead } from "./LeadsList";
 
 type PricingModel = "hourly" | "fixed" | "per_unit" | "estimate";

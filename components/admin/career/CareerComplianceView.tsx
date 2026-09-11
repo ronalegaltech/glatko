@@ -7,7 +7,7 @@ import type {
   CareerRetentionRow,
   CareerAccessRow,
   ComplianceTab,
-} from "@/app/[locale]/admin/career/compliance/page";
+} from "@/app/(site)/[locale]/admin/career/compliance/page";
 
 interface Props {
   tab: ComplianceTab;

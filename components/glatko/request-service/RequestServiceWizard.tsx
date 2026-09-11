@@ -1,5 +1,6 @@
 "use client";
 
+import { useSession } from "@/components/glatko/session/SessionProvider";
 import {
   useState,
   useCallback,
@@ -27,7 +28,7 @@ import {
   X,
 } from "lucide-react";
 import { createClient } from "@/supabase/browser";
-import { submitServiceRequest } from "@/app/[locale]/request-service/actions";
+import { submitServiceRequest } from "@/app/(site)/[locale]/request-service/actions";
 import { cn } from "@/lib/utils";
 import { trackEventWithMeta } from "@/lib/analytics/track";
 import { urgencyToStep3Key } from "@/lib/utils/urgencyI18n";
@@ -737,16 +738,29 @@ function RequestServiceWizardInner({ categories, userId }: Props) {
   );
 }
 
-export function RequestServiceWizard({ categories, userId }: Props) {
+const WizardFallback = (
+  <div className="flex min-h-[40vh] flex-col items-center justify-center gap-3">
+    <Loader2 className="h-8 w-8 animate-spin text-teal-500" />
+  </div>
+);
+
+/**
+ * perf-static (2026-09-11): `userId` is optional now. When the page does not
+ * pass it (the static /request-service page), the viewer comes from
+ * SessionProvider; the inner wizard mounts once the session is known so the
+ * anonymous-draft persistence and the email requirement never flip mid-form.
+ */
+export function RequestServiceWizard({
+  categories,
+  userId,
+}: Omit<Props, "userId"> & { userId?: string | null }) {
+  const session = useSession();
+  const resolved =
+    userId !== undefined ? userId : session.status === "ready" ? session.userId : undefined;
+  if (resolved === undefined) return WizardFallback;
   return (
-    <Suspense
-      fallback={
-        <div className="flex min-h-[40vh] flex-col items-center justify-center gap-3">
-          <Loader2 className="h-8 w-8 animate-spin text-teal-500" />
-        </div>
-      }
-    >
-      <RequestServiceWizardInner categories={categories} userId={userId} />
+    <Suspense fallback={WizardFallback}>
+      <RequestServiceWizardInner categories={categories} userId={resolved} />
     </Suspense>
   );
 }

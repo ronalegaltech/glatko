@@ -42,6 +42,18 @@ type Props = {
 
 export const revalidate = 3600;
 
+// perf-static (2026-09-11): prerender every active category in every locale;
+// unknown slugs still render on demand (dynamicParams) and are cached.
+export async function generateStaticParams(): Promise<Array<{ locale: string; slug: string }>> {
+  const { createPublicClient } = await import("@/supabase/server");
+  const { data } = await createPublicClient()
+    .from("glatko_service_categories")
+    .select("slug")
+    .eq("is_active", true);
+  const slugs = (data ?? []).map((r) => r.slug as string).filter(Boolean);
+  return routing.locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
+}
+
 function pickLocalized(
   obj: Record<string, string> | null | undefined,
   locale: string,

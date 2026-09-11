@@ -18,8 +18,8 @@ import {
 import {
   setWorkerVerification,
   verifyWorkerDocument,
-} from "@/app/[locale]/admin/career/curation/actions";
-import type { CareerAdminWorkerRow } from "@/app/[locale]/admin/career/curation/page";
+} from "@/app/(site)/[locale]/admin/career/curation/actions";
+import type { CareerAdminWorkerRow } from "@/app/(site)/[locale]/admin/career/curation/page";
 import { cn } from "@/lib/utils";
 
 interface Props {

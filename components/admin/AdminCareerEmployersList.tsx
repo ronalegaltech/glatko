@@ -6,8 +6,8 @@ import { BadgeCheck, RotateCcw } from "lucide-react";
 import {
   setEmployerTier,
   setEmployerVerified,
-} from "@/app/[locale]/admin/career/employers/actions";
-import type { AdminEmployerRow } from "@/app/[locale]/admin/career/employers/page";
+} from "@/app/(site)/[locale]/admin/career/employers/actions";
+import type { AdminEmployerRow } from "@/app/(site)/[locale]/admin/career/employers/page";
 import { cn } from "@/lib/utils";
 
 interface Props {

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Star, X } from "lucide-react";
-import { submitReview } from "@/app/[locale]/messages/actions";
+import { submitReview } from "@/app/(site)/[locale]/messages/actions";
 
 interface Props {
   quoteId: string;
